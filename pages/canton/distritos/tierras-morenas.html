@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tierras Morenas · Tilarán</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
+
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .footer { margin-bottom: 0; }
+        .contenido { max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; }
+        .contenido h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+        .contenido h3 { font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.3rem; }
+        .contenido p { margin-bottom: 0.8rem; }
+        .contenido ul { list-style: disc; padding-left: 1.8rem; margin: 0.5rem 0; }
+        .contenido ul li { margin-bottom: 0.3rem; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .descarga { display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1.2rem; background: #1a1a1a; color: #fff; border-radius: 40px; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; text-decoration: none; }
+        .descarga:hover { background: #2d2d2d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .descarga i { margin-right: 0.5rem; }
+        .volver { margin-top: 2.5rem; text-align: center; }
+        @media (max-width: 600px) { .contenido { font-size: 0.95rem; } }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="../../../index.html" aria-label="Municipalidad de Tilarán">
+                    <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                    </svg>
+                    <span class="header__title">Tilarán</span>
+                </a>
+            </div>
+
+            <button class="header__hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../municipalidad/organigrama.html">Organigrama</a></div>
+                                <div><a href="../../municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                                <div><a href="../../municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                                <div><a href="../../municipalidad/organizacion/index.html">Organización</a></div>
+                                <div><a href="../../municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                                <div><a href="../../tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                                <div><a href="../../tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                                <div><a href="../../tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                                <div><a href="../../tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                                <div><a href="../../tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                                <div><a href="../../tramites/cementerio.html">Cementerio</a></div>
+                                <div><a href="../../tramites/talento-humano/index.html">Talento humano</a></div>
+                                <div><a href="../../tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                                <div><a href="../../tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                                <div><a href="../../tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../informacion-territorial/index.html">Información territorial</a></div>
+                                <div><a href="index.html">Distritos</a></div>
+                                <div><a href="../historia-del-canton/index.html">Historia</a></div>
+                                <div><a href="../simbolos-del-canton/index.html">Símbolos</a></div>
+                                <div><a href="../tradiciones/index.html">Tradiciones</a></div>
+                                <div><a href="../tilaran.html">Tilarán</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../informese/actividades/index.html">Actividades</a></div>
+                                <div><a href="../../informese/proyectos/index.html">Proyectos</a></div>
+                                <div><a href="../../informese/lugares-para-visitar/index.html">Lugares</a></div>
+                                <div><a href="../../informese/noticias/index.html">Noticias</a></div>
+                                <div><a href="../../informese/blog.html">Blog</a></div>
+                                <div><a href="../../informese/marca-canton.html">Marca Cantón</a></div>
+                                <div><a href="../../informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="../../transparencia/index.html" class="nav__link">Transparencia</a></li>
+                    <li class="nav__item"><a href="../../contactenos/index.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+                <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title"><i class="fas fa-tractor"></i> Tierras Morenas</h1>
+                </div>
+
+                <div class="contenido">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/rv5xBSb6AKk" title="Video de Tierras Morenas" allowfullscreen></iframe>
+                    </div>
+
+                    <p><strong>TIERRAS MORENAS 50806</strong></p>
+                    <p>Es el distrito SEXTO del cantón de Tilarán.</p>
+                    <p>Se localiza a 21.9 km de distancia del centro de Tilarán.</p>
+                    <p>83.46 km2 de territorio.</p>
+                    <p>23 septiembre de 1926 según decreto del Poder Ejecutivo bajo #16 la presidencia de don Ricardo Jiménez Oreamuno.</p>
+                    <p>685 m.s.n.m. de altura.</p>
+                    <p>1.545 habitantes.</p>
+                    <p><strong>Recursos naturales:</strong> Quebradas, riachuelos, montañas.</p>
+                    <p><strong>Poblados:</strong> Aguacate, Aguas Gatas (parte), Bajos Paires, Guadalajara, Montes de Oro (parte), Paraíso (parte), Río Piedras y Sabalito.</p>
+
+                    <h2>Nombre y origen de los fundadores</h2>
+                    <p>Hay dos versiones, la dada por uno de los lugareños que indica que se tomó por la belleza de mujeres morenas que habían en el caserío. La versión más correcta es que su nombre se originó, debido al color de la tierra, oscuro o moreno. De acuerdo a estudios geológicos, Tierras Morenas son formaciones ricas en sedimentos volcánicos de color oscuro.</p>
+
+                    <h2>Atractivo para las primeras migraciones</h2>
+                    <p>Terrenos fértiles aptos para la agricultura y la ganadería y lecherías que ya habían cuando llegaron las primeros migrantes procedentes de Tambor de Alajuela según datos suministrados por don Norman Barrantes, un octogenario de ese distrito.</p>
+
+                    <p>La historia de Tierras Morenas, gira en torno a varias familias que llegaron a poblar este distrito: Cabezas, Cerdas, Ruiz, Barrantes y algunas más. Cuenta don Norman Barrantes, nativo del lugar, que sus padres don Balmanero Barrantes y doña María Ramírez, escucharon que, en Tilarán estaban regalando tierras para cultivarlas. Los padres de don Norman, no lo pensaron mucho pues en Tambor de Alajuela, la situación no era muy favorable y sin pensarlo mucho, llegaron hasta Tierras Morenas en el año de 1943.</p>
+
+                    <p>Ahí procrearon 12 hijos, uno de ellos don Norman Barrantes quien nos relata parte de su vida desde su niñez en este tranquilo distrito. "Mis padres desde que tengo noción, fueron muy trabajadores. Tuve 12 hermanos de los cuales sobrevivimos 3, vivíamos en una vieja casa de madera, otros eran ranchos de estillón con techo de hojas o pasto, el agua la sacamos de una paja que todavía existe en el distrito. Para cocinar, mi madre encendía un fogón que consistía en un cajón lleno de tierra con 4 piedras, ahí sentaban la olla y le colocaban leña.</p>
+
+                    <p>Para bañarnos, teníamos que ir al río o quebrada, el servicio sanitario no existía allá por los años de 1946, los que podían, hacían un "escusado de hueco" y quienes no podían, buscaban algún lugar en el monte o detrás de un árbol para hacer sus necesidades. Habían calles, pero al no darles mantenimiento se llenaban de monte pues la gente prefería usar los caminos que ya habían dentro de las fincas de los hacendados.</p>
+
+                    <p>En esa época había escuela, pero unos mal intencionados le prendieron fuego y luego para recibir clases, se pagaba el alquiler a algunas casas donde se recibían las lecciones. Para salir a otros pueblos, era a través de otras fincas, unos lo hacían a caballo y otros en carreta de bueyes. Con sólo 7 años ya le ayudaba a mis padres en las cosechas del campo, íbamos más rápido hasta Tilarán por dentro de las fincas vecinas cargando cebollas para venderlas allá.</p>
+
+                    <p>Para poder comprar artículos de primera necesidad, el viaje lo realizaba con mi padre en carreta hasta Cañas. Para poder transportar a algún enfermo de la comunidad, al no haber transporte inmediato, las personas se colocaban sacos de gangoche en su cuello e improvisaron una camilla de palos donde cargaban al enfermo hasta el lugar más cercano que contará con una buena carreta, ahí bajaban al paciente, lo colocaban en la carreta y demoran unas 4 a 6 horas en llegar al puesto de salud más cercano que era Cañas.</p>
+
+                    <p>Tierras morenas era una comunidad muy próspera por la calidad de tierras negras que tenía, se cultivaba arroz, frijoles, maíz, hortalizas, papas, cebollas y caña de azúcar. Existían varios trapiches manejados por bueyes, buenas tapas de dulce se sacaban y también varios de la zona se dedicaron a elaborar chirrite que para "matar las lombrices de los güilas". Había una pequeña ermita donde oficiaban misa y el santo patrón es San Isidro Labrador. Años después, se construyó la iglesia actual.</p>
+
+                    <p>En cuanto al alumbrado eléctrico, no había en esa época, la gente encendía canfineras o utilizaba candelas o simplemente un pedazo de palo prendido que se calentaba en el fogón hasta que encendiera. Don Norman dice que su padre le contaba que muchos años antes, Tierra Morena se ubicaba a 1 kilómetro de donde está actualmente, el lugar se llama Bajo Pires y pertenecían a Cañas. Ya cuando se declaró Distrito y se separó de Cañas, Tierras Morenas creció en población donde es hoy conocido.</p>
+
+                    <p>Don Norman dice después de toda tempestad, llega la calma, eso fue lo que percibieron los vecinos de Tierras Morenas a partir de 1952 pues gracias al presidente Otilio Ulate Blanco, en una gira que hizo vio las necesidades de este distrito y autorizó construir camino hasta los Aguilares, en época de verano, ya algunos que tenían vehículo lo podían utilizar, también se construyó el nuevo centro educativo y servicio de agua potable para toda la comunidad.</p>
+
+                    <p>Tiene en el lugar Don Norman Barrantes a sus 81 años, sigue labrando su tierra, ya con más dificultad pero el ama su terruño donde vive con su esposa doña Elizabeth Ruiz Sánchez a quien conoció también en Tierras Morenas, tiene 6 hijas, solo una de ellas vive con ellos. La única preocupación de don Norman y su familia es que mucha población joven ha emigrado de ahí buscando mejores opciones de estudio y trabajo y actualmente la población de este distrito, está compuesta en su mayoría por adultos mayores.</p>
+
+                    <h2>Principales actividades productivas y de servicio</h2>
+                    <p><strong>Actividades productivas:</strong> Leche, lácteos, agricultura, turismo rural.</p>
+                    <p><strong>Comidas tradicionales:</strong> Tamales de cerdo, tamales de frijoles, sopa de mondongo, lomo relleno, picadillo de papaya.</p>
+                    <p><strong>Servicios públicos:</strong> Agua potable, energía eléctrica, Ebais, escuela.</p>
+
+                    <h2>Atractivos turísticos y comerciales</h2>
+                    <ul>
+                        <li><strong>JyH Beylis:</strong> Es un licor de gran calidad que ha adquirido mucha fama. Hay unas 8 variedades de el, sabor a café, tradicional, rompo Beylis, manzana, canela entre otros. Esta empresa familiar distribuye su producto de la esquina sureste de la iglesia católica, 100 metros este. También puede llamar al teléfono 8524-8831. Hacen pedidos a diferentes partes de Guanacaste.</li>
+                        <li><strong>Licor de la zona:</strong> De la mejor calidad, catalogado así, de acuerdo a las percepciones de lugareños y quienes visitan este pintoresco lugar, al llegar al centro del poblado ahí le dan información donde adquirirlo.</li>
+                        <li><strong>Vistas al Lago Arenal y volcanes Tenorio y Miravalles:</strong> Apenas recorriendo unos cuantos kilómetros hacia Tierras Morenas, se pueden apreciar impresionantes vistas a los puntos ya mencionados, quienes gusten de la fotografía de la naturaleza y el paisaje pueden venir a Tierras Morenas, de seguro que les va a gustar muchísimo.</li>
+                        <li><strong>Río Piedras:</strong> Es una de las comunidades del distrito de Tierras Morenas. En este lugar, encontrará un museo al aire libre pues sus pobladores se han encargado de pintar con murales, las piedras que están sobre la carretera y también en la escuela. Han colocado mecates que simulan pasadores de animales como perezosos y monos. Hay un pequeño riachuelo que pasa por el lugar y un puente antiguo de madera desde donde se pueden tomar buenas fotos.</li>
+                        <li><strong>Guadalajara:</strong> Otro caserío de Tierras Morenas, está a 2.8 km de Río Piedras. Cuenta con una hermosa cabaña ecológica rodeada de la naturaleza la cual alquilan para vacacionar. Cuenta con bicicletas de uso gratuito, río, lago, caballos para pasear, gallinas, cabras. La cabaña está equipada y puede hacer su reserva a través de la página de booking.</li>
+                    </ul>
+
+                    <h2>Documentos</h2>
+                    <p>
+                        <a href="../../../files/files/folder/9v9nGi8XSnaMhkaD3i5I3GVAPn1sd0MvsSSzZShx.pdf" class="descarga" download>
+                            <i class="fas fa-file-pdf"></i> Tierras Morenas(50806)
+                        </a>
+                    </p>
+
+                    <div class="volver">
+                        <a href="index.html" class="btn btn--outline">
+                            <i class="fas fa-arrow-left"></i> Volver a Distritos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="footer__title">Municipalidad de Tilarán</span>
+                <p class="footer__tag">Cantón 14 · Guanacaste</p>
+            </div>
+            <div class="footer__info">
+                <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+                <div><i class="fas fa-phone"></i> 2695-2400</div>
+                <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+            </div>
+            <div class="footer__hours">
+                <i class="fas fa-clock"></i>
+                <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+                <div class="footer__legal">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Uso de cookies</a>
+                    <a href="#">Mapa del sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../../../script.js"></script>
+</body>
+</html>

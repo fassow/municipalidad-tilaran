@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Grandes Acontecimientos · Tilarán</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .footer {
+            margin-bottom: 0;
+        }
+        .contenido {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .contenido .evento {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            gap: 1.5rem;
+            align-items: baseline;
+        }
+        .contenido .evento:last-child {
+            border-bottom: none;
+        }
+        .contenido .evento .ano {
+            font-weight: 800;
+            color: #1a1a1a;
+            min-width: 70px;
+            font-size: 1.1rem;
+        }
+        .contenido .evento .desc {
+            font-weight: 500;
+        }
+        .volver {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .contenido {
+                font-size: 0.95rem;
+            }
+            .contenido .evento {
+                flex-direction: column;
+                gap: 0.2rem;
+                padding: 0.6rem 0;
+            }
+            .contenido .evento .ano {
+                font-size: 1rem;
+                min-width: auto;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="../../../index.html" aria-label="Municipalidad de Tilarán">
+                    <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                    </svg>
+                    <span class="header__title">Tilarán</span>
+                </a>
+            </div>
+
+            <button class="header__hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../municipalidad/organigrama.html">Organigrama</a></div>
+                                <div><a href="../../municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                                <div><a href="../../municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                                <div><a href="../../municipalidad/organizacion/index.html">Organización</a></div>
+                                <div><a href="../../municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                                <div><a href="../../tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                                <div><a href="../../tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                                <div><a href="../../tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                                <div><a href="../../tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                                <div><a href="../../tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                                <div><a href="../../tramites/cementerio.html">Cementerio</a></div>
+                                <div><a href="../../tramites/talento-humano/index.html">Talento humano</a></div>
+                                <div><a href="../../tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                                <div><a href="../../tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                                <div><a href="../../tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../informacion-territorial/index.html">Información territorial</a></div>
+                                <div><a href="../distritos/index.html">Distritos</a></div>
+                                <div><a href="index.html">Historia</a></div>
+                                <div><a href="../simbolos-del-canton/index.html">Símbolos</a></div>
+                                <div><a href="../tradiciones/index.html">Tradiciones</a></div>
+                                <div><a href="../tilaran.html">Tilarán</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../informese/actividades/index.html">Actividades</a></div>
+                                <div><a href="../../informese/proyectos/index.html">Proyectos</a></div>
+                                <div><a href="../../informese/lugares-para-visitar/index.html">Lugares</a></div>
+                                <div><a href="../../informese/noticias/index.html">Noticias</a></div>
+                                <div><a href="../../informese/blog.html">Blog</a></div>
+                                <div><a href="../../informese/marca-canton.html">Marca Cantón</a></div>
+                                <div><a href="../../informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="../../transparencia/index.html" class="nav__link">Transparencia</a></li>
+                    <li class="nav__item"><a href="../../contactenos/index.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+                <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title"><i class="fas fa-history"></i> Grandes Acontecimientos</h1>
+                </div>
+
+                <div class="contenido">
+
+                    <div class="evento">
+                        <span class="ano">1890</span>
+                        <span class="desc">Se instala en la vecindad del pueblo (márgenes del Río Santa Rosa) el primer vecino con familia, Don Antonio Cerdas, cañero que sienta su casa de habitación cerca del río a unos dos kilómetros al este del lugar que hoy ocupa la ciudad.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1894</span>
+                        <span class="desc">Inician trabajos en la finca de Lombardia, propiedad de Alberto Fait y en Quebrada Azul, don Roberto Crespi.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1895</span>
+                        <span class="desc">En misión evangélica a los guatuzos, pernocta en Tilarán el Obispo Thiel y oficia misa al aire libre (13 de junio), la primera misa que se celebra en la región, le ayudan los compañeros de expedición los presbíteros Lombardo y Carmona.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1897</span>
+                        <span class="desc">En el perímetro de la villa, se establece la primera familia ramonense de apellido Artavia, seguidamente llegan los hermanos, Miguel Alberto y Rafael López.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1898</span>
+                        <span class="desc">Llegan otros colonos alajuelenses, de apellido Elizondo, Calderón, Herrera y otros; figurando en éste grupo el dinámico ciudadano don José María Calderón Mayorga, que ayudó tanto al progreso de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1899</span>
+                        <span class="desc">Aumenta la inmigración de colonos del interior. Población 210 habitantes. El cacerío toma importancia y los vecinos piden a la Municipalidad de Cañas, la demostración del cuadrante, para establecer la ciudad en forma. Esa corporación accede a la petición y nombra a don Benjamín Elizondo con ayuda de los vecinos don José María Calderón y el Juez de Paz, don José María Rojas, hizo el trazado de 30 hectáreas (intervino en la medida el ingeniero don Leoncio Martínez).</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1902</span>
+                        <span class="desc">Se inaugura la primer ermita en la comunidad, celebración que estuviera cargo del padre Leipold, cura de Cañas.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1904</span>
+                        <span class="desc">A instancias del padre Leipold, se inician los trabajos de un templo en forma y de una casa cural.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1905</span>
+                        <span class="desc">Fue hecho el desmonte, en el circuito de las treinta manzanas del cuadrante de la aldea.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1905</span>
+                        <span class="desc">Vecinos de Santa Rosa y La Cabra (Tilarán), tienen una reunión y contemplando el problema de la educación de sus hijos, disponen empeñarse ante el Gobierno de la República, para que fuera establecida una escuela de primeras letras. Se nombró un comité residido por don José María Calderón. Se reunen por contribución pública de ¢ 169.00.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1905</span>
+                        <span class="desc">Creación de la Agencia de Policía, puesto que ocupó don Baltasar Rojas.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1907</span>
+                        <span class="desc">El vecindario se preocupó por establecer una escuela privada, por cuanto el Gobierno no atendía sus peticiones.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1908</span>
+                        <span class="desc">Queda establecido el distrito escolar de la Cabra y Santa Rosa. Se organiza la primera Junta de Educación de nombramiento de la Municipalidad de Cañas.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1908</span>
+                        <span class="desc">El vecindario eleva un memorial al inspector provincial, señor Salvador Villar, pidiendo un maestro.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1908</span>
+                        <span class="desc">Como el Gobierno demora en hacer el nombramiento de un maestro, la Junta de Educación, establece una escuela particular, con una matrícula de 20 alumnos y nombra a don Gonzalo Echeverría como maestro.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1909</span>
+                        <span class="desc">Don José María Castro Calderón influye personalmente con el Presidente de la República, don Ricardo Jiménez para la construcción de una escuela y logra su objetivo.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">La aldea es elevada a la categoría de distrito (28 de setiembre). Se nombra agente principal de policía a don Abelino Bustos. El cacerío contaba ahora con 1700 habitantes.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Manuel de Jesús Jiménez, sugiere el nombre de Tilarán para el distrito y es aceptado.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Se nombra la primera maestra oficial, la señorita Mercedes Salazar. La Junta de Educación alquiló por ¢ 3.00 una casa para escuela y se gastaron ¢ 100.00 en muebles.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Aumentó considerablemente la inmigración de colonos. Ese año ingresaron 410 que se establecieron en la zona. Se inician las primeras siembras de café en solares del pueblo.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Acuerdo del presidente Jiménez Oreamuno organizando la distribución de tierras en lotes de 50 y 25 hectáreas para fomentar las colonias. Esto fue un gran estímulo para el aumento inmediato de la población agrícola.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">El presidente Jiménez Oreamuno se toma especial interés por el avance de esa colonia y establece el servicio telefónico y el de correos.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Se establece en Tilarán con su familia el conocido cafetalero domingueño don Abrahan Campos y hace la primera plantación de café en forma.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">Es terminada la casa para la escuela, cómoda para la época. La matrícula escolar era de 60 alumnos, el costo de la obra fue de ¢ 4.000.00.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1910</span>
+                        <span class="desc">La aldea es elevada a distrito.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1911</span>
+                        <span class="desc">Se verifican los primeros exámenes oficiales en la escuela.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1913</span>
+                        <span class="desc">Alegándose haber sido establecida la población de Tilarán, en tierras de "La Legua Municipal", la Municipalidad de Cañas anuncia a los vecinos que les cobrará las parcelas que ocupan, a fin de financiar los gastos de demarcación del cuadrante de Tilarán. Esa disposición produjo malestar en el vecindario y vinieron las protestas, logrando los tilaranenses interesar en el conflicto al Gobierno de la República.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1913</span>
+                        <span class="desc">Como delegados del ejecutivo, se trasladan a Tilarán los Licenciados Buenaventura Casorla y Fabio Boudrit, para rematar los lotes ocupados por los residentes en el cuadrante. Fueron colocados a cinco colones.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1913</span>
+                        <span class="desc">Don José María Calderón se trasladó a la capital de la República e influye personalmente en el Jefe de Estado, para que el Gobierno de la República solucione el conflicto que sostienen los tilaranenses con la Municipalidad de Cañas. Consiguió su objetivo de forma tal que del tesoro Público se pagó a la Municipalidad de Cañas, la suma que se alegaba, se le debía.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1922</span>
+                        <span class="desc">Los Tilaranenses contaban con algunas finas de café y para fomentar en la región ese cultivo, el Congreso, emitió una ley que exoneraba por veinte años el café que se producía en Guanacaste, del impuesto nacional de exportación.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1923</span>
+                        <span class="desc">Administración Acosta (21 de agosto). Tilarán es erigido octavo cantón de la Provincia de Guanacaste.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1923</span>
+                        <span class="desc">Don Juvenal Valerio se hace cargo de la dirección de la Escuela de Tilarán. Dio gran impulso a la enseñanza. Se enseñaba hasta tercer grado, aumentado después a quinto. Se empeñó en agrandar el plantel y lo logró, aprovechando una visita que hiciera a la villa el secretario de educación, señor Dobles Segreda. El Gobierno contrató la obra con los empresarios Carmiol y Esquivel.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1924</span>
+                        <span class="desc">(06 de julio) Verificado en plesbicito Líbano y Tierras Morenas, quedaron agregados al cantón de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1924</span>
+                        <span class="desc">Integran la Municipalidad don Alberto Vargas (presidente), Marciano Campos y don José María Calderón. Primer paso de la municipalidad, establecer cañería, para esta obra el pueblo aporta ¢ 2.800.00. Se disponen ¢ 1.000.00 para un matadero y ¢ 2.000.00 para una Casa Municipal.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1926</span>
+                        <span class="desc">Se principia la obra de la cañería con dinero del Pueblo. El Gobierno no contribuye. Queda construido el matadero. La Junta de Educación debió de alquilar local para alojar a escolares que no cabían en la escuela pública.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1927</span>
+                        <span class="desc">El censo oficial del cantón, arroja 6.131 habitantes.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1928</span>
+                        <span class="desc">Es creada la Alcaldía, desempeñándola don Malaquías Alfaro. Construido el puente sobre el Río Chiquito, camino a Cañas. El presidente González Víquez recomienda al congreso la construcción del puente sobre el Río Arenal; mismo que es autorizado.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1929</span>
+                        <span class="desc">(12 de febrero) El obispado de Alajuela, crea la parroquia de Tilarán, con las zonas de Abangares, Guatuzo y Upala. Fuen nombrado cura Fray Leonardo de Capellades, que llegó el 13 de marzo de 1929.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1930</span>
+                        <span class="desc">Inauguración del puente sobre el Río Santa Rosa en el paso a Quebrada Azul. Don Manuel Boniche establece una pequeña planta eléctrica. Es construido el Mercado Municipal.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1931</span>
+                        <span class="desc">Con fondos de la iglesia y para fomentar una renta, Fray Leonardo establece y explota un servicio de alumbrado eléctrico, con dínamo Onan, cobrando por bombillo ¢ 3.00.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1932</span>
+                        <span class="desc">El pueblo exige al Gobierno, el cumplimiento de una ley para la construcción de la cañería. No es oído. El progreso de éste pueblo, se debe al esfuerzo y sacrificio de sus habitantes.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1933</span>
+                        <span class="desc">La Municipalidad se propone establecer una planta eléctrica en forma y saca la obra a licitación.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1933</span>
+                        <span class="desc">Se hace cargo de la dirección de la escuela, el profesor don Maurilio Alvarado Vargas.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1933</span>
+                        <span class="desc">Llegó el primer médico oficial, Dr. Francisco Rucavado.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1934</span>
+                        <span class="desc">Visita del presidente electo don León Cortés Castro (primer presidente que visita Tilarán).</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1934</span>
+                        <span class="desc">La villa de Tilarán, es ascendida a rango de ciudad.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1934</span>
+                        <span class="desc">Es inaugurada la cañería, con un costo de ¢ 15.000.00.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1934</span>
+                        <span class="desc">Se inaugura el puente sobre el Río Arenal, costó ¢ 150.000.00.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1935</span>
+                        <span class="desc">Los señores: Antonio Ferrer y Enrique Jenkins, organizan una empresa con capital local de ¢ 20.000.00 para establecer una planta hidroeléctrica en una caída de agua del Río Santa Rosa.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1939</span>
+                        <span class="desc">Visita del excelentísimo señor Obispo Monseñor Sanabria.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1940</span>
+                        <span class="desc">Se establece en Tilarán el primer cuerpo de Boys Scouts de la provincia de Guanacaste.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1940</span>
+                        <span class="desc">Construcción Iglesia Bíblica Enmanuel.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1946</span>
+                        <span class="desc">El presidente don Teodoro Picado, inaugura nueva cañería.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1947</span>
+                        <span class="desc">Se inician trabajos de una carretera entre Cañas y Tilarán, por el camino viejo (esta obra nunca se terminó).</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1952</span>
+                        <span class="desc">Don Otilio Ulate presidente de república, inaugura la carretera lastreada entre Cañas y Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1952</span>
+                        <span class="desc">Apertura Banco Nacional de Costa Rica.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1953</span>
+                        <span class="desc">Se abre una escuela complementaria, bajo la dirección del profesor don Maurilio Alvarado Vargas.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1953</span>
+                        <span class="desc">La Municipalidad y la Junta de Caminos, compran el primer tractor para arreglo y apertura de caminos.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1953</span>
+                        <span class="desc">Creación Cámara de Ganaderos, filial Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1954</span>
+                        <span class="desc">Se inaugura la actual Clínica de Salud de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1956</span>
+                        <span class="desc">La escuela complementaria asciende al rango de Liceo.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1957</span>
+                        <span class="desc">Graduación del primer grupo de bachilleres en el Liceo de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1959</span>
+                        <span class="desc">Construcción Mercado Municipal.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1961</span>
+                        <span class="desc">Tilarán es escogido por su Santidad, el Papa Pablo VI, como sede de la nueva Diócesis de Costa Rica y nombra como Obispo al excelentísimo Monseñor Román Arrieta Villalobos.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1961</span>
+                        <span class="desc">(12 de octubre) Monseñor Román Arrieta Villalobos, hace su entrada a la Ciudad de Tilarán y toma posesión como Obispo de la Diócesis de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1962</span>
+                        <span class="desc">El presidente Mario Echandi inaugura el actual edificio del Liceo Maurilo Alvarado Vargas y una nueva cañería.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1963</span>
+                        <span class="desc">Se inaugura el Palacio Episcopal.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1968</span>
+                        <span class="desc">El Presidente de la República don José Joaquin Trejos Fernández, inaugura la carretera asfaltada Cañas-Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1968</span>
+                        <span class="desc">(29 de julio) El Volcán Arenal inicia un período de 3 días de erupciones, las más activas que se recuerdan en la historia de Costa Rica.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1968</span>
+                        <span class="desc">Se abre un colegio nocturno.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1971</span>
+                        <span class="desc">Se inaugura la actual Catedral de Tilarán.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1978</span>
+                        <span class="desc">Entra en operación la Planta Hidroeléctrica Arenal (9 de diciembre). Tiene tres unidades idénticas con una potencia conjunta de 157 398kW y almacena las aguas de los ríos Arenal, Aguas Gatas, Caño negro, Chiquito y otros de menor importancia.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1984</span>
+                        <span class="desc">Apertura base Cruz Roja Costarricense.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1987</span>
+                        <span class="desc">Primera fecha Campeonato Nacional Ecuestre de Resistencia. En esa oportunidad la bestia "Gasolina" jineteada por el señor Sixto Mendoza, ganó la actividad.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1987</span>
+                        <span class="desc">Inauguración Edificio Municipal actual.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1987</span>
+                        <span class="desc">Apertura oficina Banco de Costa Rica.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1991</span>
+                        <span class="desc">Creación bandera de Tilarán, Sesión Ordinaria nº 59 del 24 de julio.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1992</span>
+                        <span class="desc">I edición de La Vuelta al Lago Arenal. Es el evento recreativo de Mountain Bike más grande y de mayor atracción en Costa Rica. Por ser un evento cien por ciento recreativo y no competitivo, se ha caracterizado por la participación de hombre, mujeres y niños de todas las edades; los cuales junto a sus familias, tienen la oportunidad de compartir y convivir con la exuberante naturaleza, apreciar los hermosos paisajes y la tranquilidad encontrada en estos lugares. Para el participante de la Vuelta al Lago representa un verdadero reto recorrer 137 km por diferentes tipos de terrenos, atravesando ríos, quebradas, riachuelos, etc.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1996</span>
+                        <span class="desc">Apertura Banco Popular y Desarrollo Comunal.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">1997</span>
+                        <span class="desc">Conformación Cuerpo de Bomberos de Costa Rica.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">2001</span>
+                        <span class="desc">Bautizo Gimnasio Municipal, Carlos Luis Palacios Herrera.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">2002</span>
+                        <span class="desc">Entra en operación Planta Eólica Tejona, propiedad del Grupo ICE.</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">2002</span>
+                        <span class="desc">Constitución Asociación para el Desarrollo Sostenible de Guanacaste (Centro Reciclaje).</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">2003</span>
+                        <span class="desc">Inauguración Escuela José María Calderón Mayorga (edificio actual).</span>
+                    </div>
+
+                    <div class="evento">
+                        <span class="ano">2004</span>
+                        <span class="desc">Bautizo al Parque central con el nombre Domingo Flaqué Montull.</span>
+                    </div>
+
+                    <div class="volver">
+                        <a href="index.html" class="btn btn--outline">
+                            <i class="fas fa-arrow-left"></i> Volver a Historia
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="footer__title">Municipalidad de Tilarán</span>
+                <p class="footer__tag">Cantón 14 · Guanacaste</p>
+            </div>
+            <div class="footer__info">
+                <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+                <div><i class="fas fa-phone"></i> 2695-2400</div>
+                <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+            </div>
+            <div class="footer__hours">
+                <i class="fas fa-clock"></i>
+                <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+                <div class="footer__legal">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Uso de cookies</a>
+                    <a href="#">Mapa del sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../../../script.js"></script>
+</body>
+</html>

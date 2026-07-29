@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Municipalidad de Tilarán · Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<header class="header" role="banner">
+    <div class="container header__inner">
+        <div class="header__logo">
+            <a href="#" aria-label="Municipalidad de Tilarán">
+                <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="header__title">Tilarán</span>
+            </a>
+        </div>
+
+        <button class="header__hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--mega">
+                    <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__grid">
+                            <div><a href="pages/municipalidad/organigrama.html">Organigrama</a></div>
+                            <div><a href="pages/municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                            <div><a href="pages/municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                            <div><a href="pages/municipalidad/organizacion/index.html">Organización</a></div>
+                            <div><a href="pages/municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item nav__item--mega">
+                    <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__grid">
+                            <div><a href="pages/tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                            <div><a href="pages/tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                            <div><a href="pages/tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                            <div><a href="pages/tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                            <div><a href="pages/tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                            <div><a href="pages/tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                            <div><a href="pages/tramites/cementerio.html">Cementerio</a></div>
+                            <div><a href="pages/tramites/talento-humano/index.html">Talento humano</a></div>
+                            <div><a href="pages/tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                            <div><a href="pages/tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                            <div><a href="pages/tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item nav__item--mega">
+                    <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__grid">
+                            <div><a href="pages/canton/informacion-territorial/index.html">Información territorial</a></div>
+                            <div><a href="pages/canton/distritos/index.html">Distritos</a></div>
+                            <div><a href="pages/canton/historia-del-canton/index.html">Historia</a></div>
+                            <div><a href="pages/canton/simbolos-del-canton/index.html">Símbolos</a></div>
+                            <div><a href="pages/canton/tradiciones/index.html">Tradiciones</a></div>
+                            <div><a href="pages/canton/tilaran.html">Tilarán</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item nav__item--mega">
+                    <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__grid">
+                            <div><a href="pages/informese/actividades/index.html">Actividades</a></div>
+                            <div><a href="pages/informese/proyectos/index.html">Proyectos</a></div>
+                            <div><a href="pages/informese/lugares-para-visitar/index.html">Lugares</a></div>
+                            <div><a href="pages/informese/noticias/index.html">Noticias</a></div>
+                            <div><a href="pages/informese/blog.html">Blog</a></div>
+                            <div><a href="pages/informese/marca-canton.html">Marca Cantón</a></div>
+                            <div><a href="pages/informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- ===== NUEVO: FUNCIONES ===== -->
+                <li class="nav__item nav__item--mega">
+                    <a href="#" class="nav__link nav__link--toggle">Funciones <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__grid">
+                            <div><a href="pages/Funciones/Eco Ruta/index.html">Eco Ruta</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- ===== NUEVO: EXPLORA TILARÁN (enlace directo, sin submenú) ===== -->
+                <li class="nav__item">
+                    <a href="pages/Explora Tilaran/index.html" class="nav__link">Explora Tilarán</a>
+                </li>
+
+                <li class="nav__item"><a href="pages/transparencia/index.html" class="nav__link">Transparencia</a></li>
+                <li class="nav__item"><a href="pages/contactenos/index.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__actions">
+            <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+            <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="search-overlay" id="searchOverlay">
+            <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+            <button><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="hero">
+    <div id="canvas-container" class="hero__canvas"></div>
+
+    <div class="container hero__content">
+        <div class="hero__text" id="heroText">
+            <span class="hero__badge">Municipalidad de Tilarán</span>
+            <h1 class="hero__title">Donde el viento<br>cuenta historias</h1>
+            <p class="hero__desc">Un portal abierto a la comunidad, diseñado con la esencia de nuestro cantón.</p>
+            <div class="hero__cta">
+                <a href="pages/tramites/index.html" class="btn btn--primary">Explorar servicios</a>
+                <a href="pages/informese/index.html" class="btn btn--ghost">Conocer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__scroll" id="scrollIndicator">
+        <span>Desliza</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<section class="section section--links" id="citizenLinks">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title"><i class="fas fa-users"></i> Enlaces Ciudadano</h2>
+            <button class="btn btn--outline btn--sm" id="profileToggle">Cambiar perfil</button>
+        </div>
+        <div class="links-grid" id="linksGrid">
+            <a href="pages/tramites/pagos-en-linea/index.html" class="link-card link-card--primary">
+                <i class="fas fa-credit-card"></i>
+                <span>Pagos en línea</span>
+                <small>Impuestos y servicios</small>
+            </a>
+            <a href="pages/tramites/index.html" class="link-card">
+                <i class="fas fa-file-alt"></i>
+                <span>Trámites en línea</span>
+                <small>Gestiones digitales</small>
+            </a>
+            <a href="pages/sesiones/transmisiones-en-vivo.html" class="link-card">
+                <i class="fas fa-video"></i>
+                <span>Sesiones en vivo</span>
+                <small>Transmisiones</small>
+            </a>
+            <a href="pages/tramites/gestion-ambiental.html" class="link-card">
+                <i class="fas fa-leaf"></i>
+                <span>Gestión ambiental</span>
+                <small>Sostenibilidad</small>
+            </a>
+            <a href="pages/informese/proyectos/index.html" class="link-card">
+                <i class="fas fa-tools"></i>
+                <span>Proyectos</span>
+                <small>Obras y desarrollo</small>
+            </a>
+            <a href="pages/informese/actividades/calendario-eventos.html" class="link-card">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendario</span>
+                <small>Eventos y actividades</small>
+            </a>
+            <a href="pages/canton/tradiciones/aniversario-cantonal.html" class="link-card">
+                <i class="fas fa-dove"></i>
+                <span>Aniversario</span>
+                <small>Celebración cantonal</small>
+            </a>
+            <a href="pages/canton/tradiciones/desfile-boyeros-tierras-morenas.html" class="link-card">
+                <i class="fas fa-horse-head"></i>
+                <span>Desfile de Boyeros</span>
+                <small>Tradición</small>
+            </a>
+            <a href="pages/contactenos/index.html" class="link-card">
+                <i class="fas fa-headset"></i>
+                <span>Atención al ciudadano</span>
+                <small>Consultas y soporte</small>
+            </a>
+            <a href="pages/informese/noticias/index.html" class="link-card">
+                <i class="fas fa-newspaper"></i>
+                <span>Noticias</span>
+                <small>Información actual</small>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section--feature">
+    <div class="container">
+        <div class="feature-grid">
+            <div class="feature-card feature-card--dark" data-scroll data-speed="0.4">
+                <h3>Auditorio Municipal</h3>
+                <p>Espacio para la cultura, el debate y la participación ciudadana.</p>
+                <a href="pages/auditorio/index.html" class="btn btn--light">Conocer <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card feature-card--image" data-scroll data-speed="0.6">
+                <div class="feature-card__content">
+                    <span class="badge">Próximo evento</span>
+                    <h4>Asamblea CCDR</h4>
+                    <p>21 de julio · Participa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--events">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title"><i class="far fa-calendar-check"></i> Eventos</h2>
+            <a href="pages/informese/actividades/index.html" class="link-arrow">Ver todos <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="events-grid">
+            <article class="event-card event-card--featured" data-scroll>
+                <div class="event-card__image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQBsXKIlEfQz--bqeffwhXNT6kJWQBcW_zW2ZrQaTArQzppmYJah6BkzJ1&s=10')">
+                    <div class="event-card__date">
+                        <span class="day">21</span>
+                        <span class="month">JUL</span>
+                    </div>
+                </div>
+                <div class="event-card__body">
+                    <span class="event-card__tag">Destacado</span>
+                    <h3>Asamblea del CCDR Tilarán</h3>
+                    <p>Participa en la asamblea donde se definirán los proyectos comunales para el próximo semestre.</p>
+                    <div class="event-card__meta">
+                        <span><i class="far fa-clock"></i> 9:00 am</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Auditorio Municipal</span>
+                    </div>
+                    <a href="pages/informese/actividades/index.html" class="btn btn--primary btn--sm">Más información</a>
+                </div>
+            </article>
+
+            <div class="events-secondary">
+                <article class="event-card event-card--small" data-scroll>
+                    <div class="event-card__image" style="background-image: url('https://www.tilaran.go.cr/images/events/assets/yMFT1oWMSMyN1GrkPRGwf6c5GSNYhDwwCSsCjKeL.jpg')">
+                        <div class="event-card__date">
+                            <span class="day">25</span>
+                            <span class="month">JUL</span>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <h4>Feria del Agricultor</h4>
+                        <p>Productos frescos y emprendedores locales.</p>
+                        <a href="pages/informese/actividades/index.html" class="link-arrow">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="event-card event-card--small" data-scroll>
+                    <div class="event-card__image" style="background-image: url('https://www.tilaran.go.cr/images/sliders/assets/web/nlXZiyyCLLQUeoEpAn95SS8IlRo5R2rrrncR8R7z.jpg')">
+                        <div class="event-card__date">
+                            <span class="day">28</span>
+                            <span class="month">JUL</span>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <h4>Concierto de Gala</h4>
+                        <p>Celebración del aniversario cantonal.</p>
+                        <a href="pages/informese/actividades/index.html" class="link-arrow">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="event-card event-card--small" data-scroll>
+                    <div class="event-card__image" style="background-image: url('https://www.tilaran.go.cr/images/events/assets/wxbM4oW1tb6KZa4VCnsUubw4cf9vQKpON5nkTYhh.jpg')">
+                        <div class="event-card__date">
+                            <span class="day">02</span>
+                            <span class="month">AGO</span>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <h4>Desfile de Boyeros</h4>
+                        <p>Tradición y cultura en Tierras Morenas.</p>
+                        <a href="pages/informese/actividades/index.html" class="link-arrow">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="event-card event-card--small" data-scroll>
+                    <div class="event-card__image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG7Gdln9rzwQlmtt-e7z4EU6v8JLn-RO-eSyyxa8Yz0b2brgGC0r8XQ0&s=10')">
+                        <div class="event-card__date">
+                            <span class="day">15</span>
+                            <span class="month">AGO</span>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <h4>Feria Navideña</h4>
+                        <p>Artesanías y festival navideño.</p>
+                        <a href="pages/informese/actividades/index.html" class="link-arrow">Ver más</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--procedures">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title"><i class="fas fa-file-alt"></i> Nuestros trámites</h2>
+            <a href="pages/tramites/index.html" class="link-arrow">Ver todos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="procedures-grid">
+            <a href="pages/tramites/pagos-en-linea/index.html" class="procedure-item procedure-item--highlight">
+                <i class="fas fa-credit-card"></i> Pagos en línea
+            </a>
+            <a href="pages/tramites/proyectos-comunales.html" class="procedure-item">
+                <i class="fas fa-users"></i> Proyectos comunales
+            </a>
+            <a href="pages/tramites/bienes-inmuebles/index.html" class="procedure-item">
+                <i class="fas fa-home"></i> Bienes inmuebles
+            </a>
+            <a href="pages/tramites/ordenamiento-territorial/index.html" class="procedure-item">
+                <i class="fas fa-map"></i> Ordenamiento territorial
+            </a>
+            <a href="pages/tramites/permisos-comerciales/index.html" class="procedure-item">
+                <i class="fas fa-store"></i> Permisos comerciales
+            </a>
+            <a href="pages/tramites/talento-humano/index.html" class="procedure-item">
+                <i class="fas fa-user-tie"></i> Talento humano
+            </a>
+            <a href="pages/tramites/intervencion-municipal.html" class="procedure-item">
+                <i class="fas fa-hard-hat"></i> Intervención Municipal
+            </a>
+            <a href="pages/tramites/cementerio.html" class="procedure-item">
+                <i class="fas fa-cross"></i> Cementerio
+            </a>
+            <a href="pages/tramites/registro-proveedores.html" class="procedure-item">
+                <i class="fas fa-handshake"></i> Registro de proveedores
+            </a>
+            <a href="pages/tramites/biblioteca-municipal.html" class="procedure-item">
+                <i class="fas fa-book"></i> Biblioteca Municipal
+            </a>
+            <a href="pages/tramites/gestion-ambiental.html" class="procedure-item">
+                <i class="fas fa-recycle"></i> Gestión Ambiental
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section--projects">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title"><i class="fas fa-handshake"></i> Proyectos</h2>
+            <a href="pages/informese/proyectos/index.html" class="link-arrow">Ver todos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card" data-scroll>
+                <div class="project-card__img" style="background-image: url('https://www.tilaran.go.cr/images/projects/assets/Du3qoEoGXYYUFDACuza0SBqbFAB0mrnBjubym6b9.png')"></div>
+                <div class="project-card__body">
+                    <h4>Comprometidos con la educación</h4>
+                    <p>Entrega de materiales a la Escuela Barrio El Carmen.</p>
+                    <a href="pages/informese/proyectos/index.html" class="btn btn--primary btn--sm">Leer más</a>
+                </div>
+            </article>
+            <article class="project-card" data-scroll>
+                <div class="project-card__img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXk0E74H5i1uR1QuMYjtnvO7C0gPEY3MsJu23EwpIaNA&s')"></div>
+                <div class="project-card__body">
+                    <h4>Casa para la persona adulta mayor</h4>
+                    <p>Un espacio digno para nuestros adultos mayores.</p>
+                    <a href="pages/informese/proyectos/index.html" class="btn btn--primary btn--sm">Leer más</a>
+                </div>
+            </article>
+            <article class="project-card" data-scroll>
+                <div class="project-card__img" style="background-image: url('https://www.tilaran.go.cr/images/news/assets/EeVHGv4l3dmWtr1fB2zysIWFnmEW831ZGhLp14ag.jpg')"></div>
+                <div class="project-card__body">
+                    <h4>Mejoras en camino a Parque del Viento</h4>
+                    <p>Acceso seguro y paisajismo sostenible.</p>
+                    <a href="pages/informese/proyectos/index.html" class="btn btn--primary btn--sm">Leer más</a>
+                </div>
+            </article>
+            <article class="project-card" data-scroll>
+                <div class="project-card__img" style="background-image: url('https://www.tilaran.go.cr/images/projects/assets/Kg5wc0ZJtdyuyw6d8xQc5GXK5KzqtrVqsOFwPwvQ.jpg')"></div>
+                <div class="project-card__body">
+                    <h4>Proyecto Eólico Tilawa</h4>
+                    <p>Energía renovable para el desarrollo sostenible.</p>
+                    <a href="pages/informese/proyectos/index.html" class="btn btn--primary btn--sm">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__brand">
+            <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3
+          c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6
+          c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80
+          c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6
+          c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1
+          l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3
+          c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3
+          c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3
+          c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2
+          c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3
+          C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7
+          c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4
+          c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4
+          c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1
+          c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6
+          c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1
+          c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0
+          c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7
+          c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1
+          c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2
+          c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3
+          C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8
+          c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5
+          C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46
+          c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+            </svg>
+            <span class="footer__title">Municipalidad de Tilarán</span>
+            <p class="footer__tag">Cantón 14 · Guanacaste</p>
+        </div>
+        <div class="footer__info">
+            <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+            <div><i class="fas fa-phone"></i> 2695-2400</div>
+            <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+        </div>
+        <div class="footer__hours">
+            <i class="fas fa-clock"></i>
+            <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container">
+            <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+            <div class="footer__legal">
+                <a href="#">Políticas de privacidad</a>
+                <a href="#">Uso de cookies</a>
+                <a href="#">Mapa del sitio</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tilarán Centro · Tilarán</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
+
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .footer { margin-bottom: 0; }
+        .contenido { max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; }
+        .contenido h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+        .contenido h3 { font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.3rem; }
+        .contenido p { margin-bottom: 0.8rem; }
+        .contenido ul { list-style: disc; padding-left: 1.8rem; margin: 0.5rem 0; }
+        .contenido ul li { margin-bottom: 0.3rem; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .descarga { display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1.2rem; background: #1a1a1a; color: #fff; border-radius: 40px; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; text-decoration: none; }
+        .descarga:hover { background: #2d2d2d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .descarga i { margin-right: 0.5rem; }
+        .volver { margin-top: 2.5rem; text-align: center; }
+        @media (max-width: 600px) { .contenido { font-size: 0.95rem; } }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="../../../index.html" aria-label="Municipalidad de Tilarán">
+                    <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                    </svg>
+                    <span class="header__title">Tilarán</span>
+                </a>
+            </div>
+
+            <button class="header__hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../municipalidad/organigrama.html">Organigrama</a></div>
+                                <div><a href="../../municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                                <div><a href="../../municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                                <div><a href="../../municipalidad/organizacion/index.html">Organización</a></div>
+                                <div><a href="../../municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                                <div><a href="../../tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                                <div><a href="../../tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                                <div><a href="../../tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                                <div><a href="../../tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                                <div><a href="../../tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                                <div><a href="../../tramites/cementerio.html">Cementerio</a></div>
+                                <div><a href="../../tramites/talento-humano/index.html">Talento humano</a></div>
+                                <div><a href="../../tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                                <div><a href="../../tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                                <div><a href="../../tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../informacion-territorial/index.html">Información territorial</a></div>
+                                <div><a href="index.html">Distritos</a></div>
+                                <div><a href="../historia-del-canton/index.html">Historia</a></div>
+                                <div><a href="../simbolos-del-canton/index.html">Símbolos</a></div>
+                                <div><a href="../tradiciones/index.html">Tradiciones</a></div>
+                                <div><a href="../tilaran.html">Tilarán</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../informese/actividades/index.html">Actividades</a></div>
+                                <div><a href="../../informese/proyectos/index.html">Proyectos</a></div>
+                                <div><a href="../../informese/lugares-para-visitar/index.html">Lugares</a></div>
+                                <div><a href="../../informese/noticias/index.html">Noticias</a></div>
+                                <div><a href="../../informese/blog.html">Blog</a></div>
+                                <div><a href="../../informese/marca-canton.html">Marca Cantón</a></div>
+                                <div><a href="../../informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="../../transparencia/index.html" class="nav__link">Transparencia</a></li>
+                    <li class="nav__item"><a href="../../contactenos/index.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+                <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title"><i class="fas fa-city"></i> Tilarán Centro</h1>
+                </div>
+
+                <div class="contenido">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/0YQCymw-piU" title="Video de Tilarán Centro" allowfullscreen></iframe>
+                    </div>
+
+                    <p><strong>DISTRITO DE TILARÁN 50801</strong></p>
+                    <p>Es el distrito PRIMERO del cantón de Tilarán.</p>
+                    <p>Se localiza a 22 kms del actual Cantón de Cañas antes llamado "Las Cañas".</p>
+                    <p>638.4 km2 de territorio.</p>
+                    <p>21 de agosto de 1923 bajo la ley #170, Tilarán procedía del cantón de Las Cañas, según decreto ejecutivo # 9 del 12 de julio de 1878.</p>
+                    <p>579 m.s.n.m de altura.</p>
+                    <p>9.449 habitantes aproximadamente de acuerdo a datos brindados por los lugareños, en el censo más reciente no aparece registro.</p>
+                    <p><strong>Poblados:</strong> Tilarán, Cuatro Esquinas, Chiripa, Piamonte, Río Chiquito, San Luis, Tejona y Tres Esquinas.</p>
+                    <p><strong>Barrios:</strong> ATRA, Quebrada Azul, San Antonio, Dos Pinos, Bonanza, Santa Rosa, Centro, INVU, Buenos Aires, Bajos de Guto, Ciudadela Juan XXIII, El Carmen, Tovar, Lomas del Sol, Linda Vista, Lomas del Carmen, Brisas del Carmen, Nayuribe, Parcelas de Monseñor, Bello Horizonte.</p>
+
+                    <h2>Nombre y origen de los fundadores</h2>
+                    <p>Este distrito originalmente era llamado La Cabra, según historia de sus moradores cerca del centro del poblado, había una quebrada a la cual llegaban estos animales a saciar su sed. En el año de 1910, vecinos del caserío enviaron una solicitud a la cartera de Gobernación para cambiar el nombre por Tilarán. Ese nombre es de origen indígena, fueron los huetares quienes habitaban esta zona antes de que llegaran las migraciones y fueron ellos, quienes le pusieron Tilawatlan de acuerdo a registros que se tienen del historiador don Carlos Gagini y su nombre significa "lugar de vientos y lluvias".</p>
+
+                    <h2>Recursos naturales</h2>
+                    <p>Parques eólicos, cría de ganado, caballos, montañas, potreros, quebradas, energía eléctrica que genera el Lago Arenal.</p>
+
+                    <h2>Atractivo para las primeras migraciones</h2>
+                    <p>El principal motivo que se dio para migrar a Tilarán fue buscar una mejor estabilidad económica. En Guanacaste y en especial en esta zona, existían terrenos todavía sin propietarios y otros eran de bajo valor donde se podía cultivar la tierra, optar por la ganadería o cría de caballos pero también muchos llegaron motivados por la explotación de árboles de madera fina y el auge minero que ya había en Líbano al descubrirse la primera beta de oro en 1907.</p>
+
+                    <p>Entre las primeras familias llegadas a Tilarán a principios del siglo XX, están los Álvarez, descendientes de Alejo Álvarez Artavia y María Brígida González Ugalde. Así lo describe el sociólogo Dr. José Luis Álvarez en su libro La Familia Álvarez de Tilarán: contexto y genealogía: "En la última década del siglo XIX y el primer lustro del siglo XX, un significativo grupo de familias costarricenses que ocupaban tierras en calidad de agricultores en la periferia de Alajuela, quedaron al margen de los procesos económicos y sociales que el capitalismo agrario impuso en torno a la producción del café.</p>
+
+                    <p>La necesidad de independencia y autonomía económica basada en la diversificación agrícola fue el sueño para muchas de estas familias. La familia Álvarez jefeada por Alejo Álvarez Artavia y su esposa María Brígida González, se ubicó en el centro de Tilarán conocido entonces como La Cabra siendo de los primeros en llegar a estas tierras. Junto a otros pioneros ocuparon poblados como Arenal, Río Chiquito, Quebrada Grande, Tronadora y Líbano. La consigna de estos colonos fue la diversificación agrícola: caña de azúcar, cacao, maíz, banano y café. Más tarde, vendría la ganadería extensiva.</p>
+
+                    <p>No cabe duda de que Tilarán nace, crece y se consolida de forma acelerada como un polo de desarrollo, en el buen sentido del término. De hecho, el ritmo de crecimiento de la población del cantón, alcanza su mayor aceleración en el primer período intercensal ocurrido entre 1927 y 1950, no habiéndose igualado hasta nuestros días".</p>
+
+                    <p>Otro dato interesante aportado por el historiador, abogado, profesor ambientalista, don Ronal Vargas Araya es el siguiente: "Los primeros habitantes de esta zona montañosa que hoy llamamos Tilarán habían llegado del Valle Central cerca de 1880. Las actas del Congreso aseguran que los primeros pobladores eran originarios de Sabanilla, San Pedro, Grecia, Palmares, San Ramón de Alajuela y San Rafael de Heredia. Muchos de los que llegaron, no soportaron los duros calores guanacastecos del verano y la lluvia que golpeaba con fuertes vientos en el invierno y se regresaron. Venciendo las inclemencias del tiempo y la espesa vegetación de aquellos bosques con abundante humus volcánico, más familias campesinas se aventuraron a repoblar allá por el año de 1894 y dieron vida al poblado de "La Cabra", mismo nombre del riachuelo principal.</p>
+
+                    <p>Por la queja de algunos vecinos el 26 de setiembre de 1910, el ministro de Gobernación, mediante decreto # 457, acuerda no denominar más a este poblado "La Cabra" y darle el nuevo nombre de Tilarán (de la raíz indígena Tilawa-Tlan: lugar de muchas lluvias y vientos). También otro enunciado sobre migraciones internas, indica que los primeros migrantes que llegaron a Tilarán, lo hicieron a partir del año de 1888 pero en mayor parte la ocupación de tierras se da alrededor de los años de 1920 a 1930 y posteriormente en Tronadora y Arenal a partir de 1960 (Evaluación regional de las migraciones – revistas.una.ac.cr).</p>
+
+                    <p>Continuando con la historia, en el año de 1905, el caserío de La Cabra como era conocido Tilarán, va llenándose de más colonos con sus familias y empiezan a organizarse entre todos a fin de fundar la primera escuela para sus hijos. Tres años después, el Gobierno de esa época se comprometió a sufragar los gastos de la primera maestra que llegó al lugar, el centro educativo tenía una sola aula y estaba ubicada al lado este de la Catedral. En 1910, el poblado de La Cabra pasa a llamarse Tilarán.</p>
+
+                    <p>"En cuanto a la historia eclesiástica del distrito de Tilarán, doña Amelia Elizondo fue una de las primeras devotas de San Antonio de Padua, patrón de la comunidad. Al saber que Monseñor Luis Leipold, Cura de Cañas, iba para España, recogió un dinero y le encomendó una imagen del Santo, la que fue recibida con mucha alegría por los pobladores que, orando primero en su casa y después en el pequeño ranchito donde celebraban la Misa, lo convirtieron pronto en patrono del pueblo. La parroquia de Tilarán fue fundada en 1929, siendo su primer párroco el Pbro. Fray Leonardo de Capellades, sacerdote español. En 1931 se reafirma el patronazgo de San Antonio, dedicándose la pequeña Ermita construida desde 1910 en el mismo lugar que hoy ocupa la catedral y cuya construcción inició con la declaratoria de la Diócesis de Tilarán en el año de 1961 dirigida por Monseñor Arrieta, luego Monseñor Héctor Morera, Monseñor Vittorino Girardi y actualmente por Monseñor Manuel Eugenio Salazar" (Ronald Vargas Araya-Historiador).</p>
+
+                    <p>La primera cañería se construyó en 1913 con las aguas del río Santa Rosa. Para llevar las aguas hasta las casas, se hizo una represa y por medio de una zanja, se conducía el agua a un tanque de almacenamiento. El alumbrado eléctrico se instaló en 1924 durante la primera administración del presidente Ricardo Jiménez Oreamuno. Durante la administración de don León Cortés Castro en 1936, lograron inaugurar ya la escuela con el nombre de "Escuela Central de Tilarán" y para el año de 1981, se rebautizó con el nombre de José María Calderón donde hoy se aloja el CINDEA (Centro Integrado de Educación de Adultos). Durante el año de 1961, por constitución Apostólica se estableció la diócesis de Tilarán y su primer Obispo fue Monseñor Román Arrieta.</p>
+
+                    <p>En cuanto a la educación secundaria, en 1952, durante la administración de don Otilio Ulate Blanco, se fundó el Liceo Maurilio Alvarado como una escuela complementaria hasta tercer año de educación secundaria. En el año de 1924, se lleva a cabo la primera sesión del Concejo de Tilarán, integrado por los regidores propietarios: Alberto Vargas Madrigal, José Calderón Herrera, Marciano Campos Elizondo, Benjamín Arias y Chalía Vega.</p>
+
+                    <h3>Breve historia del cultivo de Café en Tilarán</h3>
+                    <p>"A partir del proceso colonizador en la última década del siglo XIX, quienes migraron a este distrito, pretendieron repetir los cultivos y sistemas de producción que habían aprendido desde niños en sus lugares de procedencia, luego de limpiar la tierra, se dedicaron a cultivar granos básicos, cereales y más adelante como símbolo de pertenencia, el "grano de oro" (café). Así fue como las mayores haciendas de la región de esa época: Quebrada Azul, Lombardía y La Argentina, iniciaron la siembra del café.</p>
+
+                    <p>De esta manera, la abundancia de tierra disponible en Tilarán, posibilita a las familias migrantes obtener terrenos por compraventa, denuncio o descarrilamiento de acuerdo a sus posibilidades económicas. Otra finca que sembró café fue La Argentina, de don Fausto Calderón y de quien decían era el mayor productor de la región con un área cultivada de 50 hectáreas y donde además tenía su propio beneficio. Poco a poco, otros colonos empezaron a expandir el café a otras comunidades y distritos, el tipo de café cultivado se conocía como arábigo o criollo, como en todo cultivo, igual que en el valle central las plantas de café se vieron afectadas por diferentes plagas y enfermedades o exceso de lluvia que arruinaba las matas.</p>
+
+                    <p>El café luego del proceso de cultivo, era sacado a caballo, carreta y finalmente en camiones. Al paso de los años, los productores de café empezaron a experimentar pérdidas debido a que no existía la cultura de recolectar el grano como si lo había en la Meseta Central. Para tratar de salvar las cosechas, se creó una cooperativa para que ésta lo procesara y pagara a los caficultores de la zona, pero aún así quienes sembraban el café toparon con otros inconvenientes, al agravarse la situación para los cafetaleros con la crisis de los años 90 y a raíz de los bajos precios, afectó en forma directa a todos los caficultores de la zona, optando luego por eliminar las plantaciones e iniciar otros cultivos como chile, chayotes, tomate y tubérculos. Actualmente existen algunas fincas cultivadas con café pero en menor escala". Extracto del trabajo de las historiadoras, docentes e investigadoras de la Universidad Nacional: Margarita Torres Hernández y Brunilda Hilje Quirós "El café en un área periférica de Costa Rica: Tilarán 1904-1999".</p>
+
+                    <p>El distrito de Tilarán, es considerado uno de los más prósperos del cantón, alrededor de él se ha desarrollado un pueblo que cuenta con la mayor represa hidroeléctrica del país, el Lago Arenal, energía eólica y otras alternativas como las microempresas. La mayoría de sus habitantes luchan a diario por seguir adelante con la ilusión de dejar un legado lleno de historia a sus descendientes.</p>
+
+                    <h2>Principales actividades productivas y de servicio</h2>
+                    <p><strong>Actividades productivas:</strong> Energía eólica, energía hidroeléctrica, turismo, cría y exportación de caballos, ganado, embalse, leche de cabra, agricultura, productos lácteos, café.</p>
+                    <p><strong>Servicios públicos:</strong> Bancos, Cuerpo de Bomberos, Transporte público, supermercados, servicio de cable, escuelas, colegios, guarderías, Clínica de Salud, Acueductos y Alcantarillados, abogados, policía, parques recreativos, máquinas para hacer ejercicio al aire libre, comercios, tiendas de calzado, tiendas de ropa, turismo rural, Mini Centro Comercial y Sala de Cine.</p>
+                    <p><strong>Comidas Tradicionales:</strong> En el mercado puede consumir diferentes menús tradicionales como empanadas de papa, frijol, queso, chicharrón, sopas de mondongo, olla de carne, refrescos naturales, pero también en ferias del agricultor también puede adquirir rosquillas de queso, empanadas de chiverre, queso ahoga pollo y mucho más.</p>
+
+                    <h2>Atractivos turísticos y comerciales</h2>
+                    <ul>
+                        <li><strong>Parque del Viento:</strong> A 5 minutos en carro se puede subir al cerro Tovar en donde se encuentra el mirador Parque del Viento, es de fácil acceso también a pie, unos 35 minutos. El mirador es de libre acceso, hay una banca donde poder conversar, el mirador es de 360 grados lo que permite admirar parte del poblado, hay vista hacia algunos volcanes y cerros famosos y también se pueden observar las aspas de varias eólicas.</li>
+                        <li><strong>Mirador 5 Esquinas:</strong> A solo 5 kms del centro este mirador nos ofrece una vista muy atractiva hacía parte del Lago Arenal y hacia el Volcán que se puede apreciar cuando está despejado, el lugar cuenta con algunos puestos de venta de souvenir y hay lugar donde parquear el carro, es de acceso gratuito.</li>
+                        <li><strong>El Silencio:</strong> Si le agrada la fotografía y gusta de hermosos paisajes, a unos 7 km del centro puede llegar en carro a admirar otra parte del Lago Arenal y si lo desea, recorrer unos km más para conocer la comunidad de El Silencio.</li>
+                        <li><strong>Eólicas:</strong> Cerca del centro, hay varias torres de energía eólica las cuales pueden visitar y admirar ya que varias se encuentran a poca distancia de la carretera.</li>
+                        <li><strong>Piscinas:</strong> A unos 2 km del centro puede visitar un agradable lugar donde pasar el día, cuenta con piscinas, mesas para descanso y la recreación.</li>
+                    </ul>
+
+                    <h2>Documentos</h2>
+                    <p>
+                        <a href="../../../files/files/folder/41t4LPi8zvCt3vYmVpSdpRYI84D1l4MBwnG9jNk1.pdf" class="descarga" download>
+                            <i class="fas fa-file-pdf"></i> Tilarán(50801)
+                        </a>
+                    </p>
+
+                    <div class="volver">
+                        <a href="index.html" class="btn btn--outline">
+                            <i class="fas fa-arrow-left"></i> Volver a Distritos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="footer__title">Municipalidad de Tilarán</span>
+                <p class="footer__tag">Cantón 14 · Guanacaste</p>
+            </div>
+            <div class="footer__info">
+                <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+                <div><i class="fas fa-phone"></i> 2695-2400</div>
+                <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+            </div>
+            <div class="footer__hours">
+                <i class="fas fa-clock"></i>
+                <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+                <div class="footer__legal">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Uso de cookies</a>
+                    <a href="#">Mapa del sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../../../script.js"></script>
+</body>
+</html>

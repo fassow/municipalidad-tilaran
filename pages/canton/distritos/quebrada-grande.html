@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quebrada Grande · Tilarán</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .footer {
+            margin-bottom: 0;
+        }
+        .contenido {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .contenido h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .contenido h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .contenido p {
+            margin-bottom: 0.8rem;
+        }
+        .contenido ul {
+            list-style: disc;
+            padding-left: 1.8rem;
+            margin: 0.5rem 0;
+        }
+        .contenido ul li {
+            margin-bottom: 0.3rem;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .descarga {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .descarga:hover {
+            background: #2d2d2d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .descarga i {
+            margin-right: 0.5rem;
+        }
+        .volver {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .contenido {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="../../../index.html" aria-label="Municipalidad de Tilarán">
+                    <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                    </svg>
+                    <span class="header__title">Tilarán</span>
+                </a>
+            </div>
+
+            <button class="header__hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../municipalidad/organigrama.html">Organigrama</a></div>
+                                <div><a href="../../municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                                <div><a href="../../municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                                <div><a href="../../municipalidad/organizacion/index.html">Organización</a></div>
+                                <div><a href="../../municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                                <div><a href="../../tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                                <div><a href="../../tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                                <div><a href="../../tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                                <div><a href="../../tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                                <div><a href="../../tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                                <div><a href="../../tramites/cementerio.html">Cementerio</a></div>
+                                <div><a href="../../tramites/talento-humano/index.html">Talento humano</a></div>
+                                <div><a href="../../tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                                <div><a href="../../tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                                <div><a href="../../tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../informacion-territorial/index.html">Información territorial</a></div>
+                                <div><a href="index.html">Distritos</a></div>
+                                <div><a href="../historia-del-canton/index.html">Historia</a></div>
+                                <div><a href="../simbolos-del-canton/index.html">Símbolos</a></div>
+                                <div><a href="../tradiciones/index.html">Tradiciones</a></div>
+                                <div><a href="../tilaran.html">Tilarán</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../../informese/actividades/index.html">Actividades</a></div>
+                                <div><a href="../../informese/proyectos/index.html">Proyectos</a></div>
+                                <div><a href="../../informese/lugares-para-visitar/index.html">Lugares</a></div>
+                                <div><a href="../../informese/noticias/index.html">Noticias</a></div>
+                                <div><a href="../../informese/blog.html">Blog</a></div>
+                                <div><a href="../../informese/marca-canton.html">Marca Cantón</a></div>
+                                <div><a href="../../informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="../../transparencia/index.html" class="nav__link">Transparencia</a></li>
+                    <li class="nav__item"><a href="../../contactenos/index.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+                <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title"><i class="fas fa-tree"></i> Quebrada Grande</h1>
+                </div>
+
+                <div class="contenido">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/i5fPnMo-trY" title="Video de Quebrada Grande" allowfullscreen></iframe>
+                    </div>
+
+                    <p><strong>DISTRITO DE QUEBRADA GRANDE 50802</strong></p>
+                    <p>Es el distrito segundo del cantón de Tilarán.</p>
+                    <p>Se localiza a 7.9 kms del centro de Tilarán.</p>
+                    <p>Año de declaración: 23 setiembre de 1926 según decreto del Poder Ejecutivo #16 bajo la presidencia de don Ricardo Jiménez Oreamuno.</p>
+                    <p>725 m.s.n.m de altura.</p>
+                    <p>3.104 habitantes.</p>
+                    <p><strong>Recursos naturales:</strong> Montañas, ríos, cataratas, riachuelos.</p>
+                    <p><strong>Poblados:</strong> Pueblo Nuevo, San Miguel, y La Florida.</p>
+
+                    <h2>Nombre de los fundadores y origen</h2>
+                    <p>Los primeros pobladores, llegaron procedentes de las provincias de Alajuela, años más tarde cuando ya varios habitantes se habían instalado en Tilarán centro, algunas de esas familias decidieron ir a probar suerte a Quebrada Grande.</p>
+                    <p>Quebrada Grande, se lo pusieron los primeros colonos en llegar al lugar, doña Amable Araya, una centenaria dama del lugar y su yerno, don Miguel Ugalde coinciden en que unos kilómetros antes de llegar al distrito, donde actualmente hay un puente modular (Bailey), la quebrada que pasa debajo era sumamente grande, de ahí tomaron el nombre para ponerlo al caserío. La quebrada en la actualidad no es tan grande, pero si permanece con aguas limpias y cristalinas.</p>
+
+                    <h2>Atractivo para las primeras migraciones</h2>
+                    <p>Lugar cercano al centro de Tilarán, apto para el cultivo de caña, café y la ganadería.</p>
+
+                    <p>Una de las personas que más conocen la historia de Quebrada Grande, es la señora Amable Araya Conejo quien a pesar de contar ya con más de 100 años, posee una lucidez extraordinaria. Cuenta esta centenaria mujer, que sus padres, don Abel Araya González y Amélida Conejo Bravo, fueron de los primeros pobladores del lugar. El matrimonio llegó procedente de la provincia de Alajuela, procrearon 8 hijos de los cuales, solo doña Amable sobrevive. La vida en el campo siempre fue muy tranquila y a doña Amable, le encantaba montar a caballo y también daba sus buenas caminatas para ir hasta un pozo de agua natural que tenían sus padres en la finca.</p>
+
+                    <p>Se realizaba un concurso de reinado de gente adulta y doña Amable, fue reina en su localidad. Esta carismática mujer, ha vivido tranquila, siempre sonriente y amigable con sus vecinos. Se casó con don José María Álvarez, quien era constructor, tuvieron 8 hijos: 6 mujeres y dos hombres, tenían 73 años de casados cuando falleció don José a quien recuerda con mucho cariño pues siempre celebraron sus años de matrimonio rodeada del cariño de sus hijos y nietos.</p>
+
+                    <p>La centenaria mujer de Quebrada Grande dice que su distrito es el "más bonito de todos", la vida ahí es muy tranquila, hay naturaleza, muchos otros lugares por conocer y ella a sus 101 años pasa feliz pintando dibujos o cantándole a sus hijas la canción de "La Cucaracha".</p>
+
+                    <p>Otro vecino de este distrito, don Miguel Angel Ugalde Jiménez, tiene 71 años, sus padres don Valentín Ugalde y doña Deyanira Jiménez llegaron allí procedentes del centro de Tilarán. Don Miguel sólo tenía meses de edad y sus tíos lo criaron como otro hijo más mientras sus padres se dedicaban a desmontar el lugar para sembrar caña y dedicarse a trabajar en alguno de los 20 trapiches del caserío de los cuales solo queda uno en La Florida donde actualmente llegan turistas a conocer el proceso de la molienda. Don Miguel asistió a la escuela del lugar y años más tarde, dejó el trapiche para dedicarse a ordeñar vacas.</p>
+
+                    <p>Cuando pudo, asistió unos años al colegio, pero no concluyó sus estudios. Este vecino de Quebrada Grande, era muy activo, trabajó de tomatero, luego sembrando chile y tomates en Monteverde y los últimos años en el área de Seguridad. Cuenta que el distrito fue creciendo porque los vecinos se fueron organizando para contar con servicio de acueducto. También ayudaron a construir la actual iglesia, pintar murales para embellecer el pueblo, construyeron el pintoresco parque y ellos mismo le dan mantenimiento. El parque destaca con una hélice enorme que les fue donada, la colocaron en uno de los espacios y un pintor dedicado a murales, donó su trabajo para crear figuras alusivas al distrito de Quebrada Grande. Don Miguel se siente orgulloso e identificado con su distrito el cual considera que ha surgido pese a las migraciones de algunos vecinos.</p>
+
+                    <p>Al estar bastante cerca de Tilarán, muchas personas llegan a buscar paz y armonía con la naturaleza que hay en el lugar. Los moradores del lugar, se dedican a la ganadería de ordeño, sacan quesos y natillas que los venden ahí o en el centro de Tilarán. Uno de los proyectos que atrae ahora el turismo en este distrito según comenta don Miguel, son los 33 generadores eólicos asentados sobre torres de acero de 80 metros de altura. Las eólicas fueron colocadas el 15 de noviembre del 2014, se conoce como Parque Eólico Chiripa. Está ubicado 9 km al norte de Quebrada Grande, da energía a 80.000 casas, el proyecto luego fue vendido al ICE mediante un contrato por 20 años y es el quinto parque con este tipo de energía en el cantón.</p>
+
+                    <p>Don Miguel Ugalde, está casado con doña Flor Alvarez Araya también oriunda de la zona y han procreado 4 hijos, la mayor vive en Monteverde, otro en EEUU y los otros dos en Quebrada Grande, según comenta don Miguel, para los jóvenes no hay fuentes de trabajo, de ahí que muchos al concluir la primaria o secundaria emigran a otras provincias a buscar mejor oportunidad de vida.</p>
+
+                    <p>Aún así para quienes ya peinan canas, no cambian su hermoso distrito pues es un lugar tranquilo, de fácil acceso, con sitios turísticos por conocer y una comunidad muy amigable que siempre celebra a su Santo Patrón, San Rafael Arcángel, en ese mes realizan corridas de toros en el redondel que hay, ventas de comidas tradicionales y bailes con marimba o alguna agrupación que llega a amenizar las actividades.</p>
+
+                    <p>Finalmente Olga Bravo, otra vecina más joven del distrito de Quebrada Grande, nos cuenta cómo ve ella desde su perspectiva los cambios que ha tenido el lugar que la vio nacer. Olguita es una entusiasta mujer que era oriunda de San Miguel, un caserío que forma parte de Quebrada Grande, sus padres llegaron procedentes de Carrizal de Alajuela y de Naranjo, la vida ahí no ha sido sencilla porque sus pobladores desde corta edad aprendieron a ayudar a sus padres en labores propias del lugar como cultivar la tierra y ganadería lechera. Algunos han podido ir a la escuela y otros pocos han viajado al colegio. Hay poquísimas fuentes de trabajo y en mayor parte se ocupan de atender sus vacas, hacer natilla, quesos y venderlos en su comunidad, Quebrada Grande o Tilarán centro.</p>
+
+                    <p>Olguita se casó y hace 11 años se fue a vivir a Quebrada Grande, ella cuenta que en sí el distrito es un lugar muy acogedor donde las personas gozan de buena salud porque el clima es muy agradable, a veces con algo de lluvia, pero es muy característico de todo el cantón de Tilarán. La mayoría de personas trabajan en construcción o en lecherías. Hay lugares que pueden explotarse más, aseveró Olguita, con eso pueden generarse mayores ingresos para las familias de la comunidad como son las Cataratas de Viento Fresco, la Piedra del Indio y el Rancho Villa que está en Quebrada Grande centro.</p>
+
+                    <p>Esta esforzada mujer, es voluntaria en el grupo de Adultos Mayores Sueños Dorados, cuentan con unas 13 personas cuyas edades van de los 59 a los 87 años y además una persona con facultades especiales quien colabora con ellos. La agrupación la fundó una maestra de nombre Esther Elizondo en el 2010, y actualmente cuentan además con un grupo de bailes folclóricos que han visitado varios cantones de Guanacaste. Olguita Bravo coincide con el pensamiento de doña Amable y don Miguel, ya antes mencionados al indicar que este lugar es ideal para personas pensionadas que deseen llevar una vida tranquila y rodeada de la naturaleza.</p>
+
+                    <p>Cuenta con vecinos que colaboran en los eventos especiales como las fiestas del distrito en el mes de abril, 25 julio día de la Anexión, Independencia en septiembre donde asisten los adultos mayores y la fiesta del Patrón San Rafael Arcángel en octubre. Existe una Comisión de fiestas, una Asociación de Desarrollo y otros comités locales que se esfuerzan por darle mantenimiento al Parque, Cementerio, CEN, la Escuela y el Comité de Deportes.</p>
+
+                    <h2>Principales actividades productivas y de servicio</h2>
+                    <p><strong>Actividades productivas:</strong> Lecherías, agricultura, construcción, energía eólica.</p>
+                    <p><strong>Comidas tradicionales:</strong> Picadillos de papaya, picadillo de chayote, gallos de carne, chicharrones, lomo, aguadulce, tamales de cerdo y tamales de frijol.</p>
+
+                    <h2>Atractivos turísticos y comerciales</h2>
+                    <ul>
+                        <li><strong>Cataratas de Viento Fresco:</strong> Se ubican a pocos kilómetros del centro, hay buenos senderos y el lugar cuenta con 5 cataratas: Río Serena, La Escondida, Arco Iris, Tobogán y la Roca. Se debe llevar alimentos.</li>
+                        <li><strong>Rancho La Villa:</strong> Está ubicado a 800 metros suroeste del salón comunal Quebrada Grande, cuenta con un estanque donde las personas pueden pescar tilapias y luego pedir que se las cocinen a su gusto, también cuentan con comida casera, sopas, patacones, papas, yuca y refrescos naturales. Es un lugar ideal para ir con la familia a pasar un rato de esparcimiento.</li>
+                        <li><strong>La Piedra del Indio:</strong> Ubicadas en San Miguel, este lugar turístico ofrece tours de caminatas o cabalgatas y cañoning, el lugar está rodeado de senderos y bosque, puede encontrar variada biodiversidad de la zona también podrá observar los petroglifos que tiene una enorme piedra que encontraron en el lugar.</li>
+                        <li><strong>Restaurante El Trapiche:</strong> Ubicado en La Florida, en este lugar aparte de vivir la experiencia de conocer el proceso de cómo se elabora el dulce con caña de azúcar, también cuenta con un restaurante donde ofrecen todo tipo de comidas típicas y también a la carta.</li>
+                        <li><strong>Parque eólico La Chiripa:</strong> Ubicado a 9 kms norte de Quebrada Grande, lugar para admirar el paisaje y tomar fotografías.</li>
+                    </ul>
+                    <p><strong>Servicios Públicos:</strong> Acueducto manejado por la comunidad, alumbrado eléctrico, Ebais, Escuela, cementerio, iglesia, parque, internet.</p>
+                    <p><strong>Transporte:</strong> El autobús que deja más cerca a los pobladores es el de Monteverde cuya terminal está ubicada en Tilarán centro, hay varios horarios durante el día y si no, existe la otra opción de viajar en taxi que se toman en las cercanías del parque de Tilarán. La mayoría de las personas de este distrito, se desplazan en vehículo particular.</p>
+
+                    <h2>Documentos</h2>
+                    <p><em>No hay documentos disponibles para este distrito.</em></p>
+
+                    <div class="volver">
+                        <a href="index.html" class="btn btn--outline">
+                            <i class="fas fa-arrow-left"></i> Volver a Distritos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="footer__title">Municipalidad de Tilarán</span>
+                <p class="footer__tag">Cantón 14 · Guanacaste</p>
+            </div>
+            <div class="footer__info">
+                <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+                <div><i class="fas fa-phone"></i> 2695-2400</div>
+                <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+            </div>
+            <div class="footer__hours">
+                <i class="fas fa-clock"></i>
+                <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+                <div class="footer__legal">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Uso de cookies</a>
+                    <a href="#">Mapa del sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../../../script.js"></script>
+</body>
+</html>

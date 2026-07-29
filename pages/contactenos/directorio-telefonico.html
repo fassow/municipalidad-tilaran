@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Directorio telefónico · Tilarán</title>
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main { flex: 1; }
+        .footer { margin-bottom: 0; }
+
+        .contenido {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .contenido h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        
+        .accordion {
+            margin-top: 1.5rem;
+        }
+
+        .accordion-item {
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .accordion-header {
+            padding: 1.2rem 1.5rem;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+            font-family: inherit;
+            letter-spacing: -0.01em;
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .accordion-header i {
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0.4;
+            font-size: 0.9rem;
+        }
+
+        .accordion-header.open i {
+            transform: rotate(180deg);
+            opacity: 0.8;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-body.open {
+            max-height: 2000px; 
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .accordion-body .contacto {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1.5rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .accordion-body .contacto:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-body .contacto .nombre {
+            font-weight: 700;
+            min-width: 200px;
+        }
+
+        .accordion-body .contacto .email a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: rgba(0, 0, 0, 0.15);
+            transition: color 0.2s;
+        }
+
+        .accordion-body .contacto .email a:hover {
+            color: #000;
+            text-decoration-color: #1a1a1a;
+        }
+
+        .accordion-body .contacto .telefono {
+            opacity: 0.7;
+            white-space: nowrap;
+        }
+
+        .accordion-body .contacto .cargo {
+            font-weight: 500;
+            opacity: 0.6;
+            width: 100%;
+            font-size: 0.85rem;
+            margin-top: -0.2rem;
+        }
+
+        .volver {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .accordion-header {
+                padding: 1rem 1.2rem;
+                font-size: 1rem;
+            }
+            .accordion-body .contacto {
+                flex-direction: column;
+                gap: 0.2rem;
+                padding: 0.7rem 0;
+            }
+            .accordion-body .contacto .nombre {
+                min-width: auto;
+            }
+            .accordion-body .contacto .telefono {
+                white-space: normal;
+            }
+            .contenido h2 { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 480px) {
+            .accordion-header {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+            .accordion-body {
+                padding: 0 1rem;
+            }
+            .accordion-body.open {
+                padding: 0 1rem 1rem;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="../../index.html" aria-label="Municipalidad de Tilarán">
+                    <svg width="48" height="48" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                    </svg>
+                    <span class="header__title">Tilarán</span>
+                </a>
+            </div>
+
+            <button class="header__hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Municipalidad <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../municipalidad/organigrama.html">Organigrama</a></div>
+                                <div><a href="../municipalidad/alcaldia-municipal/index.html">Alcaldía</a></div>
+                                <div><a href="../municipalidad/concejo-municipal/index.html">Concejo</a></div>
+                                <div><a href="../municipalidad/organizacion/index.html">Organización</a></div>
+                                <div><a href="../municipalidad/reglamentos/index.html">Reglamentos</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Trámites <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../tramites/proyectos-comunales.html">Proyectos comunales</a></div>
+                                <div><a href="../tramites/pagos-en-linea/index.html">Pagos en línea</a></div>
+                                <div><a href="../tramites/bienes-inmuebles/index.html">Bienes inmuebles</a></div>
+                                <div><a href="../tramites/ordenamiento-territorial/index.html">Ordenamiento territorial</a></div>
+                                <div><a href="../tramites/permisos-comerciales/index.html">Permisos comerciales</a></div>
+                                <div><a href="../tramites/intervencion-municipal.html">Intervención Municipal</a></div>
+                                <div><a href="../tramites/cementerio.html">Cementerio</a></div>
+                                <div><a href="../tramites/talento-humano/index.html">Talento humano</a></div>
+                                <div><a href="../tramites/registro-proveedores.html">Registro de proveedores</a></div>
+                                <div><a href="../tramites/biblioteca-municipal.html">Biblioteca Municipal</a></div>
+                                <div><a href="../tramites/gestion-ambiental.html">Gestión Ambiental</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Cantón <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../canton/informacion-territorial/index.html">Información territorial</a></div>
+                                <div><a href="../canton/distritos/index.html">Distritos</a></div>
+                                <div><a href="../canton/historia-del-canton/index.html">Historia</a></div>
+                                <div><a href="../canton/simbolos-del-canton/index.html">Símbolos</a></div>
+                                <div><a href="../canton/tradiciones/index.html">Tradiciones</a></div>
+                                <div><a href="../canton/tilaran.html">Tilarán</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item nav__item--mega">
+                        <a href="#" class="nav__link nav__link--toggle">Infórmese <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu__grid">
+                                <div><a href="../informese/actividades/index.html">Actividades</a></div>
+                                <div><a href="../informese/proyectos/index.html">Proyectos</a></div>
+                                <div><a href="../informese/lugares-para-visitar/index.html">Lugares</a></div>
+                                <div><a href="../informese/noticias/index.html">Noticias</a></div>
+                                <div><a href="../informese/blog.html">Blog</a></div>
+                                <div><a href="../informese/marca-canton.html">Marca Cantón</a></div>
+                                <div><a href="../informese/cobros-y-patentes/index.html">Cobros y Patentes</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a href="../transparencia/index.html" class="nav__link">Transparencia</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="btn-icon" aria-label="Buscar" id="searchToggle"><i class="fas fa-search"></i></button>
+                <a href="https://www.youtube.com/@municipalidadtilaran" target="_blank" class="btn-icon" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/municipalidadtilaran" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <input type="text" placeholder="¿Qué necesitas?" aria-label="Búsqueda">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title"><i class="fas fa-phone-alt"></i> Directorio telefónico</h1>
+                </div>
+
+                <div class="contenido">
+                    <div class="accordion" id="directorioAccordion">
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="alcaldia">
+                                <span>Alcaldía</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="alcaldia">
+                                <div class="contacto">
+                                    <span class="nombre">Maybelyn Ramirez García</span>
+                                    <span class="cargo">Secretaria Alcaldía</span>
+                                    <span class="email"><a href="mailto:mramirez@tilaran.go.cr">mramirez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2403 | Ext: 2403</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Katherinne Alfaro López</span>
+                                    <span class="cargo">ALCALDESA</span>
+                                    <span class="email"><a href="mailto:kalfaro@tilaran.go.cr">kalfaro@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2401 | Ext: 2401</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Marlijson Ramazán Torres</span>
+                                    <span class="cargo">VICEALCALDE</span>
+                                    <span class="email"><a href="mailto:mramazan@tilaran.go.cr">mramazan@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2402 | Ext: 2402</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="catastro">
+                                <span>Gestión Catastral</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="catastro">
+                                <div class="contacto">
+                                    <span class="nombre">Gustavo Bogantes Morera</span>
+                                    <span class="cargo">Encargado de Catastro</span>
+                                    <span class="email"><a href="mailto:gbogantes@tilaran.go.cr">gbogantes@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2404 | Ext: 2404</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="asistencia">
+                                <span>Asistencia Técnica</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="asistencia">
+                                <div class="contacto">
+                                    <span class="nombre">Zeidy Campos Artavia</span>
+                                    <span class="cargo">Asistente Técnico</span>
+                                    <span class="email"><a href="mailto:zcampos@tilaran.go.cr">zcampos@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2405 | Ext: 2405</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Yamileth Carvajal Manzanarez</span>
+                                    <span class="cargo">Asistente Técnico</span>
+                                    <span class="email"><a href="mailto:ycarvajal@tilaran.go.cr">ycarvajal@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2406 | Ext: 2406</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Frayman Pérez Ramirez</span>
+                                    <span class="cargo">Asistente Técnico</span>
+                                    <span class="email"><a href="mailto:fperez@tilaran.go.cr">fperez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2408 | Ext: 2408</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="plataforma">
+                                <span>Plataforma de servicios</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="plataforma">
+                                <div class="contacto">
+                                    <span class="nombre">Kristy Porras Arias</span>
+                                    <span class="cargo">Plataformista</span>
+                                    <span class="email"><a href="mailto:kristy.porras@tilaran.go.cr">kristy.porras@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2412 | Ext: 2412</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Carolay Solera Calvo</span>
+                                    <span class="cargo">Plataformista</span>
+                                    <span class="email"><a href="mailto:carolay.solera@tilaran.go.cr">carolay.solera@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2407 | Ext: 2407</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Annia Ramirez Rodríguez</span>
+                                    <span class="cargo">Plataformista</span>
+                                    <span class="email"><a href="mailto:aramirez@tilarán.go.cr">aramirez@tilarán.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2410 | Ext: 2410</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Mario Alvarado Barrantes</span>
+                                    <span class="cargo">Plataformista</span>
+                                    <span class="email"><a href="mailto:mario.alvarado@tilaran.go.cr">mario.alvarado@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2409 | Ext: 2409</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="ciudadanos">
+                                <span>Servicios Ciudadanos y Técnicos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="ciudadanos">
+                                <div class="contacto">
+                                    <span class="nombre">José Antonio Rodríguez Herrera</span>
+                                    <span class="cargo">Coordinador Servicios Ciudadanos y Técnicos</span>
+                                    <span class="email"><a href="mailto:jrodriguez@tilaran.go.cr">jrodriguez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2414 | Ext: 2414</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="bienes">
+                                <span>Bienes Inmuebles y Valoraciones</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="bienes">
+                                <div class="contacto">
+                                    <span class="nombre">Rigoberto Hernández Quesada</span>
+                                    <span class="cargo">Encargado de Bienes Inmuebles y Valoración</span>
+                                    <span class="email"><a href="mailto:rhernandez@tilaran.go.cr">rhernandez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2434 | Ext: 2434</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="inspecciones">
+                                <span>Inspecciones</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="inspecciones">
+                                <div class="contacto">
+                                    <span class="nombre">Uber Masis Solís</span>
+                                    <span class="cargo">Inspector Municipal</span>
+                                    <span class="email"><a href="mailto:hmasis@tilaran.go.cr">hmasis@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2411 | Ext: 2411</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Jimmy Espinoza Masis</span>
+                                    <span class="cargo">Inspector Municipal</span>
+                                    <span class="email"><a href="mailto:jespinoza@tilaran.go.cr">jespinoza@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2444 | Ext: 2444</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Brallan Vásquez Reyes</span>
+                                    <span class="cargo">Inspector Municipal</span>
+                                    <span class="email"><a href="mailto:bvasquez@tilaran.go.cr">bvasquez@tilaran.go.cr</a></span>
+                                    <span class="telefono">2695-2411 | Ext: 2411</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="urbano">
+                                <span>Desarrollo y Control Urbano</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="urbano">
+                                <div class="contacto">
+                                    <span class="nombre">Carlos Esquivel Jiménez</span>
+                                    <span class="cargo">Desarrollo urbano</span>
+                                    <span class="email"><a href="mailto:cesquivel@tilaran.go.cr">cesquivel@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2426 | Ext: 2426</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="proyectos">
+                                <span>Proyectos y Control Interno</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="proyectos">
+                                <div class="contacto">
+                                    <span class="nombre">Francela Arias Arce</span>
+                                    <span class="cargo">Encargada de Proyectos y Control Interno</span>
+                                    <span class="email"><a href="mailto:farias@tilaran.go.cr">farias@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2441 | Ext: 2441</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="talento">
+                                <span>Talento Humano</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="talento">
+                                <div class="contacto">
+                                    <span class="nombre">Hazzel Villegas Nuñez</span>
+                                    <span class="cargo">Líder de Talento Humano</span>
+                                    <span class="email"><a href="mailto:hvillegas@tilaran.go.cr">hvillegas@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2418 | Ext: 2418</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Yolineth Hidalgo Mora</span>
+                                    <span class="cargo">Asistente de Talento Humano</span>
+                                    <span class="email"><a href="mailto:asistente.rh@tilaran.go.cr">asistente.rh@tilaran.go.cr</a></span>
+                                    <span class="telefono">2695-2448 | Ext: 2448</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="ambiental">
+                                <span>Gestión Ambiental</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="ambiental">
+                                <div class="contacto">
+                                    <span class="nombre">Marlon Campos Castillo</span>
+                                    <span class="cargo">Gestor Ambiental</span>
+                                    <span class="email"><a href="mailto:mcampos@tilaran.go.cr">mcampos@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2416 | Ext: 2416</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Frank Carlo Jenkins Hernández</span>
+                                    <span class="cargo">Asistente de Procesos</span>
+                                    <span class="email"><a href="mailto:asistente.ambiente@tilaran.go.cr">asistente.ambiente@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2447 | Ext: 2447</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="biblioteca">
+                                <span>Biblioteca</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="biblioteca">
+                                <div class="contacto">
+                                    <span class="nombre">Álvaro Murillo Sirias</span>
+                                    <span class="cargo">Asistente de Procesos</span>
+                                    <span class="email"><a href="mailto:amurillo@tilaran.go.cr">amurillo@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2413 | Ext: 2413</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="juridica">
+                                <span>Gestión Jurídica</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="juridica">
+                                <div class="contacto">
+                                    <span class="nombre">Ana Cecilia Cruz Mejías</span>
+                                    <span class="cargo">Líder de Gestión Jurídica</span>
+                                    <span class="email"><a href="mailto:acruz@tilaran.go.cr">acruz@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2415 | Ext: 2415</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">José Mario Murillo Mejías</span>
+                                    <span class="cargo">Asistente de Procesos</span>
+                                    <span class="email"><a href="mailto:jmmurillo@tilaran.go.cr">jmmurillo@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2439 | Ext: 2439</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="tesoreria">
+                                <span>Tesorería</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="tesoreria">
+                                <div class="contacto">
+                                    <span class="nombre">Yendry Ulloa Rodríguez</span>
+                                    <span class="cargo">Tesorera Municipal</span>
+                                    <span class="email"><a href="mailto:yulloa@tilaran.go.cr">yulloa@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2417 | Ext: 2017</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="auditoria">
+                                <span>Auditoria</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="auditoria">
+                                <div class="contacto">
+                                    <span class="nombre">Giovanni Hernández Murillo</span>
+                                    <span class="cargo">Auditor Interno</span>
+                                    <span class="email"><a href="mailto:giovanni.hernandez@tilaran.go.cr">giovanni.hernandez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2419 | Ext: 2419</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="financieros">
+                                <span>Servicios Financieros y Logísticos</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="financieros">
+                                <div class="contacto">
+                                    <span class="nombre">Zaida Molina Barrantes</span>
+                                    <span class="cargo">Coordinadora Servicios Financieros y Logísticos</span>
+                                    <span class="email"><a href="mailto:zmolina@tilaran.go.cr">zmolina@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2421 | Ext: 2421</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Gilberth Mondragón Mejías</span>
+                                    <span class="cargo">Asistente Financiero</span>
+                                    <span class="email"><a href="mailto:gmondragon@tilaran.go.cr">gmondragon@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2422 | Ext: 2422</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="contabilidad">
+                                <span>Contabilidad</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="contabilidad">
+                                <div class="contacto">
+                                    <span class="nombre">José Ángel Sosa Mora</span>
+                                    <span class="cargo">Contador Municipal</span>
+                                    <span class="email"><a href="mailto:jsosa@tilaran.go.cr">jsosa@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2423 | Ext: 2423</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="concejo">
+                                <span>Concejo Municipal</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="concejo">
+                                <div class="contacto">
+                                    <span class="nombre">Silvia Centeno González</span>
+                                    <span class="cargo">Secretaria Consejo Municipal</span>
+                                    <span class="email"><a href="mailto:scenteno@tilaran.go.cr">scenteno@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506)2695-2424 | Ext: 2424</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Alex Zamora Porras</span>
+                                    <span class="cargo">Abogado Concejo Municipal</span>
+                                    <span class="email"><a href="mailto:azamora@tilaran.go.cr">azamora@tilaran.go.cr</a></span>
+                                    <span class="telefono">26952436 | Ext: 2436</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Mayda López Alpizar</span>
+                                    <span class="cargo">Asistente de Gestión Administrativa</span>
+                                    <span class="email"><a href="mailto:mlopez@tilaran.go.cr">mlopez@tilaran.go.cr</a></span>
+                                    <span class="telefono">26952424 | Ext: 2424</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="social">
+                                <span>Gestion Social</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="social">
+                                <div class="contacto">
+                                    <span class="nombre">Meryanne Bolaños Alvarado</span>
+                                    <span class="cargo">Líder de Gestion social</span>
+                                    <span class="email"><a href="mailto:gestionsocial@tilaran.go.cr">gestionsocial@tilaran.go.cr</a></span>
+                                    <span class="telefono">2695-2425 | Ext: 2425</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="infraestructura">
+                                <span>Servicios de Infraestructura</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="infraestructura">
+                                <div class="contacto">
+                                    <span class="nombre">Pedro Carranza Suarez</span>
+                                    <span class="cargo">Ingeniero Asistente</span>
+                                    <span class="email"><a href="mailto:pcarranza@tilaran.go.cr">pcarranza@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2428 | Ext: 2428</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Louis Porras Duarte</span>
+                                    <span class="cargo">Coordinador Servicios de Infraestructura</span>
+                                    <span class="email"><a href="mailto:lporras@tilaran.go.cr">lporras@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2429 | Ext: 2429</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Royner Cerdas Murillo</span>
+                                    <span class="cargo">Infraestructura</span>
+                                    <span class="email"><a href="mailto:royner.cerdas@tilaran.go.cr">royner.cerdas@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2429 | Ext: 2429</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Sofía Murillo Aguilar</span>
+                                    <span class="cargo">Infraestructura</span>
+                                    <span class="email"><a href="mailto:smurillo@tilaran.go.cr">smurillo@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2430 | Ext: 2430</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="plantel">
+                                <span>Plantel municipal</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="plantel">
+                                <div class="contacto">
+                                    <span class="nombre">Isauro Herrera González</span>
+                                    <span class="cargo">Plantel municipal</span>
+                                    <span class="email"><a href="mailto:iherrera@tilaran.go.cr">iherrera@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2431 | Ext: 2431</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="informatica">
+                                <span>Informática</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="informatica">
+                                <div class="contacto">
+                                    <span class="nombre">Alberth López Pérez</span>
+                                    <span class="cargo">Encargado de Informática</span>
+                                    <span class="email"><a href="mailto:alopez@tilaran.go.cr">alopez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2432 | Ext: 2432</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="archivo">
+                                <span>Archivo</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="archivo">
+                                <div class="contacto">
+                                    <span class="nombre">Wilberth Ramos Chacón</span>
+                                    <span class="cargo">Archivista</span>
+                                    <span class="email"><a href="mailto:wramos@tilaran.go.cr">wramos@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2435 | Ext: 2435</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="salud">
+                                <span>Salud Ocupacional</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="salud">
+                                <div class="contacto">
+                                    <span class="nombre">Hazel Ordoñez Delgado</span>
+                                    <span class="cargo">Encargada de Salud Ocupacional</span>
+                                    <span class="email"><a href="mailto:hordonez@tilaran.go.cr">hordonez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2438 | Ext: 2438</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="generales">
+                                <span>Servicios Generales</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="generales">
+                                <div class="contacto">
+                                    <span class="nombre">Jason Seballos Herrera</span>
+                                    <span class="cargo">Servicios Generales</span>
+                                    <span class="email"><a href="mailto:servicios.generales@tilaran.go.cr">servicios.generales@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2440 | Ext: 2440</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="proveeduria">
+                                <span>Proveeduría</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="proveeduria">
+                                <div class="contacto">
+                                    <span class="nombre">Shirley Ramírez Mendez</span>
+                                    <span class="cargo">Proveedora</span>
+                                    <span class="email"><a href="mailto:sramirez@tilaran.go.cr">sramirez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2442 | Ext: 2442</span>
+                                </div>
+                                <div class="contacto">
+                                    <span class="nombre">Yesenia Sibaja Alvarado</span>
+                                    <span class="cargo">Asistente Proveeduría</span>
+                                    <span class="email"><a href="mailto:ysibaja@tilaran.go.cr">ysibaja@tilaran.go.cr</a></span>
+                                    <span class="telefono">2695-2420 | Ext: 2420</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header" data-target="taller">
+                                <span>Taller Municipal</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-body" id="taller">
+                                <div class="contacto">
+                                    <span class="nombre">Minor Hernández Murillo</span>
+                                    <span class="cargo">Mecánico</span>
+                                    <span class="email"><a href="mailto:mhernandez@tilaran.go.cr">mhernandez@tilaran.go.cr</a></span>
+                                    <span class="telefono">(506) 2695-2445 | Ext: 2445</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> 
+
+                    <div class="volver">
+                        <a href="index.html" class="btn btn--outline">
+                            <i class="fas fa-arrow-left"></i> Volver a Contáctenos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <svg width="40" height="40" viewBox="0 0 155.9 226.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150.9,65.1c-14.7,0-28.8,3.7-41.3,10.7V51.3H151c1.8,0,3.3-1.5,3.3-3.3c0-14.1-11.5-25.6-25.6-25.6c-7.6,0-14.4,3.3-19,8.5V3.5c0-1.8-1.5-3.3-3.3-3.3c-14.1,0-25.6,11.5-25.6,25.6c0,7.6,3.3,14.4,8.5,19H61.8c-1.8,0-3.3,1.5-3.3,3.3c0,14.1,11.5,25.6,25.6,25.6c7.6,0,14.4-3.3,19-8.5V80c-4.2,2.9-8.1,6.1-11.8,9.8c-5.3,5.3-9.9,11.2-13.5,17.6c-3.9,1.4-8,2.1-12.1,2.1c-5.1,0.1-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-1.2-0.5-2.5-0.9-3.7-1.3c6.6-4.6,10.9-12.3,10.9-20.9c0-1.8-1.5-3.3-3.3-3.3H27.1l25.4-25.4c1.3-1.3,1.3-3.3,0-4.6l-7.2-7.2c9.9-10.3,15.5-24.2,15.5-38.5c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3c0,12.6-4.9,24.8-13.5,33.9L33,29.6c6.6-7.1,10.4-16.5,10.4-26.3C43.4,1.5,42,0,40.2,0c-1.8,0-3.3,1.5-3.3,3.3c0,8.1-3.1,15.8-8.5,21.7L21.5,18c-0.3-0.3-0.6-0.5-1-0.7C23.9,13.6,26,8.7,26,3.3C26,1.5,24.5,0,22.7,0c-1.8,0-3.3,1.5-3.3,3.3c0,8-6.5,14.5-14.5,14.5c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c4,0,7.8-1.1,11-3.1v12.1c-3.5,1.3-7.2,2-11,2c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3c3.8,0,7.5-0.5,11-1.6v11.1c-3.6,0.8-7.3,1.2-11,1.2c-1.8,0-3.3,1.5-3.3,3.3C1.7,57.6,3.2,59,5,59c3.7,0,7.4-0.4,11-1.1v21H5c-1.8,0-3.3,1.5-3.3,3.3c0,9.2,4.9,17.2,12.2,21.8c-3.8,1.4-7.4,3.3-10.8,5.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.4-4.6,14-7.1,21.9-7.2c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c2.7,0,5.4-0.3,8.1-0.8c-1.8,4-3.3,8.2-4.4,12.4c-1.2,0.1-2.4,0.2-3.5,0.2c-5.1,0.1-10-0.8-14.5-2.6c-3-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.4,0.1-18.3,3.1-25.9,8.7c-1.5,1.1-1.8,3.1-0.7,4.6c1.1,1.5,3.1,1.8,4.6,0.7c6.5-4.7,14.1-7.3,22.1-7.4c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c0.7,0,1.3,0,2-0.1c-0.7,3.9-1.1,7.9-1.3,11.9c-0.2,0-0.3,0-0.5,0c-5.1,0-10-0.8-14.5-2.6c-2.9-1.3-5.4-2.4-5.4-2.4c0,0-0.1,0-0.1,0c-5.4-2.1-11.1-3.2-17-3.1c-9.5,0.1-18.5,3.2-26.2,8.8c-1.4,1.1-1.7,3.1-0.7,4.6c1.1,1.4,3.1,1.7,4.6,0.7c6.5-4.8,14.3-7.5,22.4-7.6c5-0.1,9.8,0.8,14.4,2.6c0.4,0.2,2.7,1.2,5.4,2.4c0,0,0.1,0,0.1,0c5.2,2.1,10.7,3.1,16.5,3.1c0.2,0,0.4,0,0.6,0c1.3,0,2.6-0.1,3.9-0.2c1.7-0.1,3-1.5,3-3.2c0-6.1,0.7-12,2.1-17.8c0-0.1,0-0.2,0.1-0.2c3.3-13.8,10.4-26.5,20.7-36.8c3.7-3.7,7.7-7,12-9.8c0.1-0.1,0.3-0.2,0.4-0.3c12.5-8.2,27.2-12.7,42.6-12.7c1.8,0,3.3-1.5,3.3-3.3C154.2,66.6,152.7,65.1,150.9,65.1z M128.7,29c9.4,0,17.2,6.8,18.8,15.8h-37.5C111.5,35.8,119.3,29,128.7,29z M87.4,25.8c0-9.4,6.8-17.2,15.8-18.8v37.5C94.2,43,87.4,35.1,87.4,25.8z M84.1,67.1c-9.4,0-17.2-6.8-18.8-15.8h37.5C101.3,60.3,93.5,67.1,84.1,67.1z M45.5,51.3l-23,23V53.9c0,0,0,0,0,0V35.4c0,0,0,0,0,0v-7.2L45.5,51.3z M8.5,85.5H46c-1.6,8.9-9.4,15.8-18.8,15.8C17.9,101.2,10.1,94.4,8.5,85.5z" fill="currentColor"/>
+                </svg>
+                <span class="footer__title">Municipalidad de Tilarán</span>
+                <p class="footer__tag">Cantón 14 · Guanacaste</p>
+            </div>
+            <div class="footer__info">
+                <div><i class="fas fa-map-marker-alt"></i> F2CJ+H88, Tilarán, 50801</div>
+                <div><i class="fas fa-phone"></i> 2695-2400</div>
+                <div><i class="fas fa-envelope"></i> tramites@tilaran.go.cr</div>
+            </div>
+            <div class="footer__hours">
+                <i class="fas fa-clock"></i>
+                <div>Lun–Jue 7:00 am – 3:15 pm<br>Vie 7:00 am – 2:15 pm</div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2026 · Todos los derechos reservados · Diseño por Felipe Marchena Rojas</p>
+                <div class="footer__legal">
+                    <a href="#">Políticas de privacidad</a>
+                    <a href="#">Uso de cookies</a>
+                    <a href="#">Mapa del sitio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../../script.js"></script>
+
+    <script>
+        
+        $(document).ready(function() {
+            $('.accordion-header').on('click', function() {
+                const target = $(this).data('target');
+                const body = $('#' + target);
+                const icon = $(this).find('i');
+
+                
+                
+                
+
+                body.toggleClass('open');
+                icon.toggleClass('open');
+            });
+        });
+    </script>
+</body>
+</html>

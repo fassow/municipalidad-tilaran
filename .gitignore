@@ -1,0 +1,22 @@
+# Carpeta de node_modules
+node_modules/
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+
+# Carpeta de minificados
+minified/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de editores
+.vscode/
+.idea/
+
+# Archivos de respaldo
+*.bak
+*.old
